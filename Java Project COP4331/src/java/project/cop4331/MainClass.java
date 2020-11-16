@@ -9,7 +9,7 @@ package java.project.cop4331;
  *
  * @author mikey
  */
-public class JavaProjectCOP4331 {
+public class MainClass {
 
     /**
      * @param args the command line arguments
