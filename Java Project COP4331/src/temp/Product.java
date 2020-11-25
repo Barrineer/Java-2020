@@ -37,4 +37,47 @@ public class Product {
         return itemIDCounter;
     }
     
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getDesc(){
+        return this.description;
+    }
+
+    public void setDesc(String description){
+        this.description = description;
+    }
+
+    public int getItemID(){
+        return this.itemID;
+    }
+
+    public double getPrice(){
+        return this.price;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    public int getQuantity(){
+        return this.quantity;
+    }
+
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
+
+    public String getAdress(){
+        return this.address;
+    }
+
+    public void setAdress(String address){
+        this.address = address;
+    }
 }

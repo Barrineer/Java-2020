@@ -21,11 +21,7 @@ public class Cart {
         this.total += 1;
     }
     
-    public void removeProduct(Product product){
-        
-    }
-    
-    public void removeAllProducts(Product product){
+    public void removeProduct(Product product, int quantity){
         
     }
     

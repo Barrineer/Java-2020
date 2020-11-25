@@ -23,24 +23,29 @@ public class Inventory {
         this.profits = 0;
     }
     
-    public void addProduct(){
-        
+    public void addProduct(Product product){
+        sellerList.add(product);
     }
     
-    public void removeProduct(){
+    public void removeProduct(Product product){
+        
+        for(int i = 0;i < sellerList.size();i++){
+            if(sellerList.get(i).getName().equals(product.getName()))
+                sellerList.remove(i);
+        }
         
     }
     
     public double calculateRevenue(double revenue){
-        
+        return 0;
     }
     
     public double calculateSales(double sales){
-        
+        return 0;
     }
     
     public double calculateProfits(double profits){
-        
+        return 0;
     }
     
 }
