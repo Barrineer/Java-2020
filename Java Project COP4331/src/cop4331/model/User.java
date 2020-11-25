@@ -1,4 +1,4 @@
-package temp;
+package cop4331.model;
 import java.util.*;
 /**
  * Holds the information for the User and allows get/set methods.

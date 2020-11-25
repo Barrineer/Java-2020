@@ -1,4 +1,4 @@
-package temp;
+package cop4331.model;
 import java.util.*;
 /**
  * Adds a new User to a single instance of Login.
