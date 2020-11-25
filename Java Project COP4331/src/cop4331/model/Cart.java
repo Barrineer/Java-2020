@@ -1,7 +1,8 @@
 package cop4331.model;
 import java.util.*;
 /**
- *
+ * Cart class for the BrosRus application.
+ * Stores the user's ID, an array list of Products, and the total number of Products in the Cart.
  * @author mikey
  */
 public class Cart {
@@ -16,13 +17,34 @@ public class Cart {
         this.total = 0;
     }
     /**
+     * Private constructor for Cart.
+     * Mainly used for the clone() function.
+     */
+    private Cart(String userID, ArrayList<Product> productList, double total){
+        this.userID = userID;
+        this.productList = productList;
+        this.total = total;
+    }
+    /**
+     * Getter for the productList.
+     * @return Returns a clone of the productList.
+     */
+    public ArrayList<Product> getProductList(){
+        return (ArrayList<Product>) this.productList.clone();
+    }
+    public String getUserID(){
+        return this.userID;
+    }
+    /**
      * Adds a new Product instance to the Cart.
      * Also increases the Cart's total attribute by 1.
      * @param product The Product to be added to the Cart.
+     * @param quantity The quantity attribute of a Product to be added to Cart.
      */
     public void addProduct(Product product, int quantity){
         Product temp = (Product) product.clone();
-        this.productList.add(product);
+        temp.setQuantity(quantity);
+        productList.add(temp);
         this.total += 1;
     }
     /**
@@ -46,6 +68,14 @@ public class Cart {
             }
                 
         }           
+    }
+    /**
+     * Creates a clone of the Cart.
+     * @return Returns the cloned Cart.
+     */
+    public Cart clone(){
+        Cart clone = new Cart(this.userID, this.productList, this.total);
+        return clone;
     }
     
 }

@@ -1,8 +1,9 @@
 package cop4331.model;
 
 /**
- * Product class for the BrosDoBUs Application
+ * Product class for the BrosRUs Application.
  * Stores the name, description, item ID, price, quantity, seller ID, and address of a Product.
+ * Includes a uniqueID creator and getter/setter functions for most attributes.
  * @author mikey
  */
 public class Product {
@@ -53,7 +54,10 @@ public class Product {
         itemIDCounter += 1;
         return itemIDCounter;
     }
-    
+    /**
+     * Creates a clone of a Product.
+     * @return Returns the cloned Product.
+     */
     public Product clone(){
         Product clone = new Product(this.name,this.description,this.itemID,this.price,this.quantity,this.sellerID,this.address);
         return clone;
