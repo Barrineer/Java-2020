@@ -6,6 +6,7 @@ import java.util.*;
  */
 public class User {
     
+    
     private String accountType;
     private String userName;
     private String password;
