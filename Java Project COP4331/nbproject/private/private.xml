@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/temp/Login.java</file>
-            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/temp/User.java</file>
-            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/temp/Inventory.java</file>
-            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/temp/Product.java</file>
-            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/temp/Cart.java</file>
-            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/temp/Receipt.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/model/Cart.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/model/Inventory.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/model/Product.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/gui/ApplicationGUI.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/model/Login.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/model/User.java</file>
+            <file>file:/C:/Users/mikey/Desktop/Fall%202020/COP%204331%20Object-Oriented%20Design%20and%20Prog/Java%20Project%20Stuff/Java-2020/Java%20Project%20COP4331/src/cop4331/model/Receipt.java</file>
         </group>
     </open-files>
 </project-private>
