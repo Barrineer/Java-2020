@@ -9,17 +9,31 @@ public class User {
     private String accountType;
     private String userName;
     private String password;
-    private String userID;
+    private int userID;
+    private static int userIDCounter = 1;
     private String address;
     private Date age;
     
-    public User(String accountType, String userName, String passsword, String userID, String address, Date age){
+    public User(String accountType, String userName, String password, String address, Date age){
         this.accountType = accountType;
         this.userName = userName;
         this.password = password;
-        this.userID = userID;
+        this.userID = createNewID();
         this.address = address;
         this.age = (Date) age.clone();        
+    }
+    public User(String accountType, String userName, String password){
+        this.accountType = accountType;
+        this.userName = userName;
+        this.password = password;
+        this.userID = createNewID();
+        this.address = "none";
+        this.age = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
+    }
+    
+    private int createNewID(){
+        userIDCounter += 1;
+        return userIDCounter;
     }
     /**
      * Getter for the accountType attribute.

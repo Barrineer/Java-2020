@@ -10,7 +10,7 @@ public class Product {
     
     private String name;
     private String description;
-    public int itemIDCounter = 1000;
+    private static int itemIDCounter = 1000;
     private int itemID;
     private double price;
     private int quantity;
