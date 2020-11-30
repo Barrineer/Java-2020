@@ -15,6 +15,7 @@ public class LoginListener implements ActionListener{
         String command = e.getActionCommand();
         LoginGUI gui = LoginGUI.getInstance();
         Login login = Login.getInstance();
+        
         if(command.equals("New")){
             gui.newUserGUI();
         }
@@ -30,21 +31,22 @@ public class LoginListener implements ActionListener{
             this.accountType = "";
             gui.goBackGUI();
         }
-        else {
+        else { //Submit is clicked
             if(accountType.equals("")){
                 String userName = gui.getUserName();
                 String password = gui.getPassword();
+                User user = new User(accountType,userName,password);
+                boolean test = login.verify(user);
                 String confirmPassword = gui.getConfirmPassword();
                 
                 if(password.equals(confirmPassword)){
-                    User user = new User(accountType,userName,password);
-                    
                     //Check if this User already created an account
-                    if(login.verify(user)){
+                    if(test){
                         gui.setLoginLabel("You already created an account! Go back to Sign In.");
                     }
                     else{
                         login.addUser(user);
+                        login.createSerialization();
                         gui.setLoginLabel("Successfully created a new account! Go back to Sign In.");
                     }
                 }  
@@ -53,13 +55,9 @@ public class LoginListener implements ActionListener{
                 }
             }
             else if(accountType.equals("Buyer")){
-                //Go to next JFrame
+                
             }
             else if(accountType.equals("Seller")){
-                //Go to next JFrame
-            }
-            else{
-                gui.setLoginLabel("Please Go Back To Sign In.");
                 
             }
         }
@@ -70,6 +68,7 @@ public class LoginListener implements ActionListener{
     }
     
     public static void main(String args[]){
+        Login.getInstance().loadSerialization();
         LoginGUI.getInstance();
     }
     

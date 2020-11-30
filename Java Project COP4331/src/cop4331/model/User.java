@@ -4,7 +4,7 @@ import java.util.*;
  * Holds the information for the User and allows get/set methods.
  * @author mikey
  */
-public class User {
+public class User implements java.io.Serializable{
     
     private String accountType;
     private String userName;
@@ -34,6 +34,13 @@ public class User {
     private int createNewID(){
         userIDCounter += 1;
         return userIDCounter;
+    }
+    /**
+     * Getter for the userID attribute.
+     * @return Returns an int of the user's ID.
+     */
+    public int getUserID(){
+        return this.userID;
     }
     /**
      * Getter for the accountType attribute.

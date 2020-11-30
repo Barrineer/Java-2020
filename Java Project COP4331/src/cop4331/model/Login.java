@@ -1,4 +1,5 @@
 package cop4331.model;
+import java.io.*;
 import java.util.*;
 /**
  * Adds a new User to a single instance of Login.
@@ -27,6 +28,48 @@ public class Login {
      */
     public void addUser(User user){
         users.add(user);
+    }
+    
+    public void createSerialization(){
+        try{
+            FileOutputStream fileOut = new FileOutputStream("login.ser");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(users);
+            objectOut.close();
+            fileOut.close();
+            
+        }
+        catch(IOException x){
+            System.out.println("IO Error.");
+        }
+    }
+    public void loadSerialization(){
+        try{
+            FileInputStream fileIn = new FileInputStream("login.ser");
+            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
+            users = (ArrayList<User>) objectIn.readObject();
+            objectIn.close();
+            fileIn.close();
+            
+        }
+        catch(IOException x){
+            System.out.println("IO Error.");
+        }
+        catch(ClassNotFoundException y){
+           System.out.println("Class Error.");
+        }
+    }
+    public void removePreviousData(){
+        try{
+            FileOutputStream fileOut = new FileOutputStream("login.ser");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.close();
+            fileOut.close();
+            users = new ArrayList<User>();
+        }
+        catch(IOException x){
+            System.out.println("IO Error.");
+        }
     }
     /**
      * Checks if the User's credentials is equivalent to the information given.
