@@ -1,4 +1,5 @@
-package cop4331.gui;
+package cop4331.controller;
+import cop4331.gui.LoginGUI;
 import cop4331.model.Login;
 import cop4331.model.User;
 import java.awt.event.ActionEvent;
@@ -65,11 +66,6 @@ public class LoginListener implements ActionListener{
     
     public String getAccountType(){
         return this.accountType;
-    }
-    
-    public static void main(String args[]){
-        Login.getInstance().loadSerialization();
-        LoginGUI.getInstance();
     }
     
 }

@@ -1,4 +1,5 @@
 package cop4331.gui;
+import cop4331.controller.LoginListener;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
