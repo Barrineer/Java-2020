@@ -59,7 +59,7 @@ public class Login {
            System.out.println("Class Error.");
         }
     }
-    public void removePreviousData(){
+    public void removeAllData(){
         try{
             FileOutputStream fileOut = new FileOutputStream("login.ser");
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
@@ -89,5 +89,4 @@ public class Login {
         }
         return verify;
     }
-    
 }
