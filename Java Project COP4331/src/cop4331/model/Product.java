@@ -6,7 +6,7 @@ package cop4331.model;
  * Includes a uniqueID creator and getter/setter functions for most attributes.
  * @author mikey
  */
-public class Product {
+public class Product implements java.io.Serializable{
     
     private String name;
     private String description;

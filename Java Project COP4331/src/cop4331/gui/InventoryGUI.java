@@ -9,6 +9,6 @@ package cop4331.gui;
  *
  * @author mikey
  */
-public class InventoryGUI {
+public class InventoryGUI extends MainFrameGUI{
     
 }

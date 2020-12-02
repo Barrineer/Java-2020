@@ -14,13 +14,18 @@ public class User implements java.io.Serializable{
     private String address;
     private Date age;
     
+    private Cart cart;
+    private Inventory inventory;
+    
     public User(String accountType, String userName, String password, String address, Date age){
         this.accountType = accountType;
         this.userName = userName;
         this.password = password;
         this.userID = createNewID();
         this.address = address;
-        this.age = (Date) age.clone();        
+        this.age = (Date) age.clone();
+        this.cart = new Cart(userID);
+        this.inventory = new Inventory(userID);
     }
     public User(String accountType, String userName, String password){
         this.accountType = accountType;

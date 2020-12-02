@@ -5,13 +5,13 @@ import java.util.*;
  * Stores the user's ID, an array list of Products, and the total number of Products in the Cart.
  * @author mikey
  */
-public class Cart {
+public class Cart implements java.io.Serializable{
     
-    private String userID;
+    private int userID;
     private ArrayList<Product> productList;
     private double total;
     
-    public Cart(String userID){
+    public Cart(int userID){
         this.userID = userID;
         this.productList = new ArrayList<Product>();
         this.total = 0;
@@ -20,7 +20,7 @@ public class Cart {
      * Private constructor for Cart.
      * Mainly used for the clone() function.
      */
-    private Cart(String userID, ArrayList<Product> productList, double total){
+    private Cart(int userID, ArrayList<Product> productList, double total){
         this.userID = userID;
         this.productList = productList;
         this.total = total;
@@ -32,7 +32,7 @@ public class Cart {
     public ArrayList<Product> getProductList(){
         return (ArrayList<Product>) this.productList.clone();
     }
-    public String getUserID(){
+    public int getUserID(){
         return this.userID;
     }
     /**

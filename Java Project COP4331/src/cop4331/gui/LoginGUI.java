@@ -7,9 +7,8 @@ import javax.swing.*;
  * The Login GUI for the BrosRus Application.
  * @author mikey
  */
-public class LoginGUI {
+public class LoginGUI extends MainFrameGUI{
 
-    private JFrame loginFrame;
     private JPanel loginPanel;
     private JPanel signUpPanel;
     
@@ -30,7 +29,7 @@ public class LoginGUI {
     private JButton backButton;
     
     private LoginListener command = new LoginListener();
-    
+            
     private final int NORTH = GridBagConstraints.NORTH;
     private final int SOUTH = GridBagConstraints.SOUTH;
     private final int EAST = GridBagConstraints.EAST;
@@ -38,51 +37,35 @@ public class LoginGUI {
     private final int CENTER = GridBagConstraints.CENTER;
     private final int REMAINDER = GridBagConstraints.REMAINDER;
     
-    private static LoginGUI instance = new LoginGUI();
-    
-    private LoginGUI(){
-        createButtonEvents();
-        createLoginGUI();
-    }
-    
-    public static LoginGUI getInstance(){
-        return instance;
-    }
-    
-    private void createLoginGUI(){
+    public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
-        loginFrame = new JFrame("Sign in to BrosRus");
-        loginFrame.setSize(500,500);
-        loginFrame.setLayout(new GridBagLayout());
-        
+        createNewFrame("Welcome to BrosRus!",500,500);
         loginLabel = new JLabel("Sign in as a Buyer or Seller?", JLabel.CENTER);
         c.gridy = 0;
-        loginFrame.add(loginLabel,c);
+        mainFrame.add(loginLabel,c);
         
         loginPanel = new JPanel();
         loginPanel.setLayout(new GridBagLayout());
         c.gridy = 1;
         c.ipady = 0;
-        loginFrame.add(loginPanel,c);
+        mainFrame.add(loginPanel,c);
         
         newUserLabel = new JLabel("or Sign up:", JLabel.CENTER);
         c.gridy = 2;
-        loginFrame.add(newUserLabel,c);
+        mainFrame.add(newUserLabel,c);
         
         signUpPanel = new JPanel();
         signUpPanel.setLayout(new FlowLayout());
         c.gridy = 3;
-        loginFrame.add(signUpPanel,c);
+        mainFrame.add(signUpPanel,c);
         
         loginPanel.add(buyerButton);
         loginPanel.add(sellerButton);
         signUpPanel.add(newUserButton);
         
-        loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        loginFrame.setVisible(true);
     }
     
-    private void createButtonEvents(){
+    public void createButtonEvents(){
         newUserButton = new JButton("Sign Up");
         buyerButton = new JButton("Buyer");
         sellerButton = new JButton("Seller");
@@ -106,15 +89,15 @@ public class LoginGUI {
         GridBagConstraints c = new GridBagConstraints();
         loginLabel.setText("Create a new account");
         
-        loginFrame.remove(loginPanel);
-        loginFrame.remove(newUserLabel);
+        mainFrame.remove(loginPanel);
+        mainFrame.remove(newUserLabel);
         signUpPanel.remove(newUserButton);
         
         loginPanel = new JPanel();
         loginPanel.setLayout(new GridBagLayout());
         c.gridy = 1;
         c.ipady = 20;
-        loginFrame.add(loginPanel,c);
+        mainFrame.add(loginPanel,c);
         
         userNameLabel = new JLabel("Username: ");
         c.gridy = 0;
@@ -165,7 +148,7 @@ public class LoginGUI {
         c.ipady = 0;
         loginPanel.add(submitButton,c);
         
-        loginFrame.repaint();
+        mainFrame.repaint();
     }
     
     public void changeLoginGUI(){
@@ -177,15 +160,15 @@ public class LoginGUI {
         passwordLabel = new JLabel("Password: ");
         passwordField = new JTextField(17);
         
-        loginFrame.remove(loginPanel);
-        loginFrame.remove(newUserLabel);
+        mainFrame.remove(loginPanel);
+        mainFrame.remove(newUserLabel);
         signUpPanel.remove(newUserButton);
         
         loginPanel = new JPanel();
         loginPanel.setLayout(new GridBagLayout());
         c.gridy = 1;
         c.ipady = 20;
-        loginFrame.add(loginPanel,c);
+        mainFrame.add(loginPanel,c);
         
         userNameLabel = new JLabel("Username: ");
         c.gridy = 0;
@@ -224,37 +207,33 @@ public class LoginGUI {
         c.ipady = 0;
         loginPanel.add(submitButton,c);
         
-        loginFrame.repaint();
+        mainFrame.repaint();
     }
     
     public void goBackGUI(){
         GridBagConstraints c = new GridBagConstraints();
         loginLabel.setText("Sign in as a Buyer or Seller?");
         
-        loginFrame.remove(loginPanel);
-        loginFrame.remove(newUserLabel);
+        mainFrame.remove(loginPanel);
+        mainFrame.remove(newUserLabel);
         
         loginPanel = new JPanel();
         loginPanel.setLayout(new GridBagLayout());
         c.gridy = 1;
         c.ipady = 0;
-        loginFrame.add(loginPanel,c);
+        mainFrame.add(loginPanel,c);
         
         newUserLabel = new JLabel("or Sign up:", JLabel.CENTER);
         c.gridy = 2;
         c.ipady = 0;
-        loginFrame.add(newUserLabel,c);
+        mainFrame.add(newUserLabel,c);
         
         loginPanel.add(buyerButton);
         loginPanel.add(sellerButton);
         signUpPanel.add(newUserButton);
         
-        loginFrame.repaint();
+        mainFrame.repaint();
         
-    }
-    
-    public void removeGUI(){
-        loginFrame.dispose();
     }
     
     public String getUserName(){

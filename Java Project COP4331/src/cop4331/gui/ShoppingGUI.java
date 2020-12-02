@@ -7,40 +7,24 @@ import javax.swing.*;
  *
  * @author mikey
  */
-public class ShoppingGUI {
+public class ShoppingGUI extends MainFrameGUI{
     
-    private JFrame shoppingFrame;
     private JPanel shoppingPanel;
     private JPanel topPanel;
     
     private JLabel shoppingLabel;
     
-    private static ShoppingGUI instance = new ShoppingGUI();
-    
-    private ShoppingGUI(){
-        createButtonEvents();
-        createShoppingGUI();
-    }
-    
-    public static ShoppingGUI getInstance(){
-        return instance;
-    }
-    
-    private void createButtonEvents(){
+    public void createButtonEvents(){
         
     }
     
-    private void createShoppingGUI(){
+    public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
-        shoppingFrame = new JFrame("Welcome to BrosRus");
-        shoppingFrame.setSize(1000,1000);
-        shoppingFrame.setLayout(new GridBagLayout());
+        createNewFrame("Welcome to BrosRus",1000,1000);
         
         shoppingLabel = new JLabel("Select a product you would like to view",JLabel.CENTER);
-        shoppingFrame.add(shoppingLabel);
+        mainFrame.add(shoppingLabel);
         
-        shoppingFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        shoppingFrame.setVisible(true);
     }
     
 }

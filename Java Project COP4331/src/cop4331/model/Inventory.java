@@ -6,16 +6,16 @@ import java.util.*;
  *
  * @author Joseph
  */
-public class Inventory {
+public class Inventory implements java.io.Serializable{
     
-    private String userID;
+    private int userID;
     private double revenue;
     private double sales;
     private double profits;
     
     private ArrayList<Product> sellerList;
     
-    public Inventory(String userID){
+    public Inventory(int userID){
         this.userID = userID;
         this.sellerList = new ArrayList<Product>();
         this.revenue = 0;
