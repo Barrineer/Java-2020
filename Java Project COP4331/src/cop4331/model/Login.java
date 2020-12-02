@@ -81,8 +81,7 @@ public class Login {
         boolean verify = false;
         if(users.size() > 0){        
             for(int i = 0;i < users.size();i++){
-                if(users.get(i).getUserName().equals(user.getUserName())){
-                    if(users.get(i).getPassword().equals(user.getPassword()))
+                if(users.get(i).getUserName().equals(user.getUserName()) && users.get(i).getPassword().equals(user.getPassword())){
                         verify = true;
                 }
             }

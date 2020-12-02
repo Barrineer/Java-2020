@@ -253,12 +253,12 @@ public class LoginGUI {
         
     }
     
-    public void successGUI(){
-        
+    public void removeGUI(){
+        loginFrame.dispose();
     }
     
     public String getUserName(){
-        return this.passwordField.getText();
+        return this.userNameField.getText();
     }
     
     public String getPassword(){

@@ -33,14 +33,22 @@ public class LoginListener implements ActionListener{
             gui.goBackGUI();
         }
         else { //Submit is clicked
-            if(accountType.equals("")){
-                String userName = gui.getUserName();
-                String password = gui.getPassword();
-                User user = new User(accountType,userName,password);
-                boolean test = login.verify(user);
-                String confirmPassword = gui.getConfirmPassword();
+            String userName = gui.getUserName().replaceAll("\\s","");
+            String password = gui.getPassword().replaceAll("\\s","");
+            User user = new User(accountType,userName,password);
+            boolean test = login.verify(user);
+            
+            if(accountType.equals("")){ //Submit is clicked when a new account is being created
                 
-                if(password.equals(confirmPassword)){
+                String confirmPassword = gui.getConfirmPassword();
+                //Check if username/password is empty
+                if(userName.equals("")){
+                    gui.setLoginLabel("Please enter a non-empty username.");
+                }
+                else if(password.equals("")){
+                    gui.setLoginLabel("Please enter a non-empty password.");
+                }
+                else if(password.equals(confirmPassword)){
                     //Check if this User already created an account
                     if(test){
                         gui.setLoginLabel("You already created an account! Go back to Sign In.");
@@ -55,11 +63,27 @@ public class LoginListener implements ActionListener{
                     gui.setLoginLabel("Passwords Do Not Match! Try Again.");
                 }
             }
-            else if(accountType.equals("Buyer")){
+            else if(accountType.equals("Buyer")){ //Submit is clicked by a buyer account
+                if(test){
+                    gui.removeGUI();
+                    CurrentGUI.getInstance().changeGUI("Shopping");
+                    CurrentGUI.getInstance().callGUI();
+                }
+                else {
+                    gui.setLoginLabel("Incorrect username and password combination.");
+                }
                 
             }
-            else if(accountType.equals("Seller")){
-                
+            
+            else if(accountType.equals("Seller")){ //Submit is clicked by a seller account
+                if(test){
+                    gui.removeGUI();
+                    CurrentGUI.getInstance().changeGUI("Inventory");
+                    CurrentGUI.getInstance().callGUI();
+                }
+                else {
+                    gui.setLoginLabel("Incorrect username and password combination.");
+                }
             }
         }
     }
