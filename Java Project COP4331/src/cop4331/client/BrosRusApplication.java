@@ -8,6 +8,9 @@ import cop4331.model.*;
  */
 public class BrosRusApplication {
     
+    //Various Products that will be used as examples:
+    // JOEY MAKE SOME PRODUCTS HERE TYTY Like 20 should be good idk go ham bud.
+    
     public static void main(String args[]){
         Login.getInstance().loadSerialization();
         CurrentGUI.getInstance().callGUI();

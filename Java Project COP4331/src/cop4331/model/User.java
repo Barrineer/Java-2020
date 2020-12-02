@@ -9,10 +9,11 @@ public class User implements java.io.Serializable{
     private String accountType;
     private String userName;
     private String password;
-    private int userID;
-    private static int userIDCounter = 1;
     private String address;
     private Date age;
+    
+    private int userID;
+    private static int userIDCounter = 1;
     
     private Cart cart;
     private Inventory inventory;
@@ -34,6 +35,8 @@ public class User implements java.io.Serializable{
         this.userID = createNewID();
         this.address = "none";
         this.age = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
+        this.cart = new Cart(userID);
+        this.inventory = new Inventory(userID);
     }
     
     private int createNewID(){

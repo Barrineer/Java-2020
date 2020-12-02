@@ -1,4 +1,5 @@
 package cop4331.gui;
+import cop4331.model.*;
 import cop4331.controller.ShoppingListener;
 import java.awt.*;
 import java.awt.event.*;
