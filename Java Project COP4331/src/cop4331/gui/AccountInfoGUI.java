@@ -2,6 +2,7 @@ package cop4331.gui;
 
 import cop4331.controller.AccountInfoListener;
 import cop4331.model.Login;
+import cop4331.model.User;
 import java.awt.*;
 import javax.swing.*;
 
@@ -40,8 +41,40 @@ public class AccountInfoGUI extends MainFrameGUI{
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
+        User user = Login.getInstance().getCurrentUser();
+        String date = user.getAge().toString();
+        String year = date.substring(24);
+        String month = date.substring(4,7);
+        String day = date.substring(8,10);
         
-        accountLabel = new JLabel(Login.getInstance().getCurrentUser().getUserName() + " Account Details",JLabel.CENTER);
+        if(month.equals("Jan"))
+            month = "01";
+        else if(month.equals("Feb"))
+            month = "02";
+        else if(month.equals("Mar"))
+            month = "03";
+        else if(month.equals("Apr"))
+            month = "04";
+        else if(month.equals("May"))
+            month = "05";
+        else if(month.equals("Jun"))
+            month = "06";
+        else if(month.equals("Jul"))
+            month = "07";
+        else if(month.equals("Aug"))
+            month = "08";
+        else if(month.equals("Sep"))
+            month = "09";
+        else if(month.equals("Oct"))
+            month = "10";
+        else if(month.equals("Nov"))
+            month = "11";
+        else
+            month = "12";
+            
+        date = year + "-" + month + "-" + day;
+        
+        accountLabel = new JLabel(user.getUserName() + " Account Details",JLabel.CENTER);
         c.weightx = 1;
         c.weighty = 1;
         c.gridwidth = 2;
@@ -59,6 +92,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         mainFrame.add(userNameLabel,c);
         
         userNameField = new JTextField(17);
+        userNameField.setText(user.getUserName());
         c.gridx = 1;
         c.gridy = 1;
         c.anchor = NW;
@@ -72,6 +106,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         mainFrame.add(passwordLabel,c);
         
         passwordField = new JTextField(17);
+        passwordField.setText(user.getPassword());
         c.gridx = 1;
         c.gridy = 2;
         c.anchor = NW;
@@ -85,6 +120,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         mainFrame.add(addressLabel,c);
         
         addressField = new JTextField(17);
+        addressField.setText(user.getAddress());
         c.gridx = 1;
         c.gridy = 3;
         c.anchor = NW;
@@ -98,6 +134,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         mainFrame.add(ageLabel,c);
         
         ageField = new JTextField(17);
+        ageField.setText(date);
         c.gridx = 1;
         c.gridy = 4;
         c.anchor = NW;
