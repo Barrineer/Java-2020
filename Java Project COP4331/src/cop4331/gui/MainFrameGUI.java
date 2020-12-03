@@ -22,17 +22,34 @@ public class MainFrameGUI {
     protected final int NW = GridBagConstraints.NORTHWEST;
     protected final int SE = GridBagConstraints.SOUTHEAST;
     protected final int SW = GridBagConstraints.SOUTHWEST;
+    
+    protected final int ABOVE_BASELINE = GridBagConstraints.ABOVE_BASELINE;
+    protected final int ABOVE_BASELINE_LEADING = GridBagConstraints.ABOVE_BASELINE_LEADING;
+    protected final int ABOVE_BASELINE_TRAILING = GridBagConstraints.ABOVE_BASELINE_TRAILING;
+    protected final int BASELINE = GridBagConstraints.BASELINE;
+    protected final int BASELINE_LEADING = GridBagConstraints.BASELINE_LEADING;
+    protected final int BASELINE_TRAILING = GridBagConstraints.BASELINE_TRAILING;
+    protected final int BELOW_BASELINE = GridBagConstraints.BELOW_BASELINE;
+    protected final int BELOW_BASELINE_LEADING = GridBagConstraints.BELOW_BASELINE_LEADING;
+    protected final int BELOW_BASELINE_TRAILING = GridBagConstraints.BELOW_BASELINE_TRAILING;
+    
+    protected final int REMAINDER = GridBagConstraints.REMAINDER;
+    protected final int BOTH = GridBagConstraints.BOTH;
     /*
     SERIF = TimesRoman
     SANS_SERIF = Helvetica
     MONOSPACED = Courier
     */
-    protected final Font font = new Font(Font.SANS_SERIF,Font.BOLD,18);
-    
-    protected final int BASELINE_LEADING = GridBagConstraints.BASELINE_LEADING;
-    
-    protected final int REMAINDER = GridBagConstraints.REMAINDER;
-    protected final int BOTH = GridBagConstraints.BOTH;
+    protected final Font font = new Font(Font.SANS_SERIF,Font.PLAIN,14);
+    protected final Font fontBold = new Font(Font.SANS_SERIF,Font.BOLD,14);
+    protected final Font fontItalic = new Font(Font.SANS_SERIF,Font.ITALIC,14);
+    protected final Font fontBigger = new Font(Font.SANS_SERIF,Font.PLAIN,16);
+    protected final Font fontBiggerBold = new Font(Font.SANS_SERIF,Font.BOLD,16);
+    protected final Font fontBiggerItalic = new Font(Font.SANS_SERIF,Font.ITALIC,16);
+    protected final Font fontBiggest = new Font(Font.SANS_SERIF,Font.PLAIN,18);
+    protected final Font fontBiggestBold = new Font(Font.SANS_SERIF,Font.BOLD,18);
+    protected final Font fontBiggestItalic = new Font(Font.SANS_SERIF,Font.ITALIC,18);
+
     
     public void createNewFrame(String str,int width,int height){
         mainFrame = new JFrame(str);
