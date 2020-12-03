@@ -83,11 +83,6 @@ public class LoginGUI extends MainFrameGUI{
         submitButton.addActionListener(command);
     }
     
-    public void setFont(){
-        
-        
-    }
-    
     public void newUserGUI(){
         GridBagConstraints c = new GridBagConstraints();
         loginLabel.setText("Create a new account");

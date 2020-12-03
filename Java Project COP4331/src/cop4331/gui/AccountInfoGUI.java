@@ -17,6 +17,7 @@ public class AccountInfoGUI extends MainFrameGUI{
     private JLabel passwordLabel;
     private JLabel addressLabel;
     private JLabel ageLabel;
+    private JLabel submitDetailLabel;
     
     private JTextField userNameField;
     private JTextField passwordField;
@@ -80,7 +81,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridwidth = 2;
         c.gridx = 0;
         c.gridy = 0;
-        c.anchor = SOUTH;
+        c.anchor = CENTER;
         mainFrame.add(accountLabel,c);
         
         //Username
@@ -89,6 +90,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridy = 1;
         c.gridwidth = 1;
         c.anchor = NE;
+        c.insets = new Insets(0,0,-100,0);
         mainFrame.add(userNameLabel,c);
         
         userNameField = new JTextField(17);
@@ -140,16 +142,59 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.anchor = NW;
         mainFrame.add(ageField,c);
         
+        //Submition Detail Label
+        submitDetailLabel = new JLabel("Click Submit after making changes:");
+        c.gridx = 1;
+        c.gridy = 5;
+        c.anchor = WEST;
+        mainFrame.add(submitDetailLabel,c);
+        
+        //Back Button 
+        c.gridx = 0;
+        c.gridy = 6;
+        c.anchor = SW;
+        c.insets = new Insets(10,10,50,10);
+        mainFrame.add(backButton,c);
+        
+        //Submit Button
+        c.gridx = 1;
+        c.anchor = NW;
+        c.insets = new Insets(10,10,100,10);
+        mainFrame.add(submitButton,c);
+        
         //Set Font
         accountLabel.setFont(fontBiggerBold);
         userNameLabel.setFont(fontBold);
         passwordLabel.setFont(fontBold);
         addressLabel.setFont(fontBold);
         ageLabel.setFont(fontBold);
+        submitDetailLabel.setFont(font);
         userNameField.setFont(font);
         passwordField.setFont(font);
         addressField.setFont(font);
         ageField.setFont(font);
+        backButton.setFont(font);
+        submitButton.setFont(font);
+    }
+    
+    public String getUserName(){
+        return userNameField.getText();
+    }
+    
+    public String getPassword(){
+        return passwordField.getText();
+    }
+    
+    public String getAddress(){
+        return addressField.getText();
+    }
+    
+    public String getAge(){
+        return ageField.getText();
+    }
+    
+    public void setSubmitDetailLabel(String text){
+        submitDetailLabel.setText(text);
     }
     
 }

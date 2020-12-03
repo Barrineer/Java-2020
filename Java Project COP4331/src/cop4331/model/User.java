@@ -34,7 +34,7 @@ public class User implements java.io.Serializable{
         this.password = password;
         this.userID = createNewID();
         this.address = "none";
-        this.age = new GregorianCalendar(2000, Calendar.JANUARY, 1).getTime();
+        this.age = new GregorianCalendar(2000,0,1).getTime();
         this.cart = new Cart(userID);
         this.inventory = new Inventory(userID);
     }
