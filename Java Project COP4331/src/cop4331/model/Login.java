@@ -9,6 +9,7 @@ import java.util.*;
  */
 public class Login {
     
+    private User currentUser;
     private ArrayList<User> users;
     private static Login instance = new Login();
     
@@ -29,6 +30,17 @@ public class Login {
     public void addUser(User user){
         users.add(user);
     }
+    public ArrayList<User> getUsers(){
+        return users;
+    }
+    
+    public void setCurrentUser(User user){
+        currentUser = user;
+    }
+    
+    public User getCurrentUser(){
+        return currentUser;
+    }
     
     public void createSerialization(){
         try{
@@ -40,7 +52,7 @@ public class Login {
             
         }
         catch(IOException x){
-            System.out.println("IO Error.");
+            System.out.println("I Error.");
         }
     }
     public void loadSerialization(){
@@ -53,7 +65,7 @@ public class Login {
             
         }
         catch(IOException x){
-            System.out.println("IO Error.");
+            System.out.println("O Error.");
         }
         catch(ClassNotFoundException y){
            System.out.println("Class Error.");
@@ -83,6 +95,7 @@ public class Login {
             for(int i = 0;i < users.size();i++){
                 if(users.get(i).getUserName().equals(user.getUserName()) && users.get(i).getPassword().equals(user.getPassword())){
                         verify = true;
+                        setCurrentUser(users.get(i));
                 }
             }
         }

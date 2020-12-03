@@ -14,13 +14,13 @@ public class Product implements java.io.Serializable{
     private int itemID;
     private double price;
     private int quantity;
-    private String sellerID;
+    private int sellerID;
     private String address;
     /**
      * Constructor for a new Product.
      * Gives a unique itemID.
      */
-    public Product(String name, String description, double price, int quantity, String sellerID, String address){
+    public Product(String name, String description, double price, int quantity, int sellerID, String address){
         
         this.name = name;
         this.description = description;
@@ -36,7 +36,7 @@ public class Product implements java.io.Serializable{
      * Private constructor for a new Product.
      * Gives an itemID that may belong to another Product.
      */
-    private Product(String name, String description, int itemID, double price, int quantity, String sellerID, String address){
+    private Product(String name, String description, int itemID, double price, int quantity, int sellerID, String address){
         this.name = name;
         this.description = description;
         this.itemID = itemID;

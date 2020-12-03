@@ -65,6 +65,8 @@ public class LoginListener implements ActionListener{
             }
             else if(accountType.equals("Buyer")){ //Submit is clicked by a buyer account
                 if(test){
+                    login.getCurrentUser().setAccountType(accountType);
+                    login.createSerialization();
                     gui.removeOldFrame();
                     CurrentGUI.getInstance().changeGUI(new ShoppingGUI());
                     CurrentGUI.getInstance().callGUI();
@@ -77,6 +79,8 @@ public class LoginListener implements ActionListener{
             
             else if(accountType.equals("Seller")){ //Submit is clicked by a seller account
                 if(test){
+                    login.getCurrentUser().setAccountType(accountType);
+                    login.createSerialization();
                     gui.removeOldFrame();
                     CurrentGUI.getInstance().changeGUI(new InventoryGUI());
                     CurrentGUI.getInstance().callGUI();

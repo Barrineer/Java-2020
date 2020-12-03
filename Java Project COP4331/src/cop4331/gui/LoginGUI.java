@@ -29,13 +29,6 @@ public class LoginGUI extends MainFrameGUI{
     private JButton backButton;
     
     private LoginListener command = new LoginListener();
-            
-    private final int NORTH = GridBagConstraints.NORTH;
-    private final int SOUTH = GridBagConstraints.SOUTH;
-    private final int EAST = GridBagConstraints.EAST;
-    private final int WEST = GridBagConstraints.WEST;
-    private final int CENTER = GridBagConstraints.CENTER;
-    private final int REMAINDER = GridBagConstraints.REMAINDER;
     
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
@@ -251,5 +244,7 @@ public class LoginGUI extends MainFrameGUI{
     public void setLoginLabel(String newText){
         loginLabel.setText(newText);
     }
+    
+    
 
 }

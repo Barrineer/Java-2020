@@ -23,6 +23,10 @@ public class Inventory implements java.io.Serializable{
         this.profits = 0;
     }
     
+    public ArrayList<Product> getInventory(){
+        return sellerList;
+    }
+    
     public void addProduct(Product product){
         sellerList.add((Product) product.clone());
     }

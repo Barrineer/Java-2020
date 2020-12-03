@@ -11,20 +11,32 @@ import javax.swing.*;
 public class ShoppingGUI extends MainFrameGUI{
     
     private JPanel shoppingPanel;
-    private JPanel topPanel;
     
     private JLabel shoppingLabel;
     
     public void createButtonEvents(){
+        switchButton = new JButton("Switch to seller");
         
+        switchButton.setActionCommand("Switch");
+        
+        switchButton.addActionListener(new ShoppingListener());
     }
     
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("Welcome to BrosRus",1000,1000);
+        accountName = new JLabel(Login.getInstance().getCurrentUser().getUserName());
+        createTopPanel();
         
         shoppingLabel = new JLabel("Select a product you would like to view",JLabel.CENTER);
-        mainFrame.add(shoppingLabel);
+        mainFrame.add(shoppingLabel,c);
+        
+        shoppingPanel = new JPanel();
+        shoppingPanel.setLayout(new GridBagLayout());
+        mainFrame.add(shoppingPanel);
+        
+        
+        
         
     }
     

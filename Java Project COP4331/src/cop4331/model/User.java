@@ -39,6 +39,13 @@ public class User implements java.io.Serializable{
         this.inventory = new Inventory(userID);
     }
     
+    public boolean equals(User user){
+        if(this.userID == user.userID){
+            return true;
+        }
+        return false;
+    }
+    
     private int createNewID(){
         userIDCounter += 1;
         return userIDCounter;
@@ -121,5 +128,13 @@ public class User implements java.io.Serializable{
      */
     public void setDate(Date age){
         this.age = (Date) age.clone();
+    }
+    
+    public Cart getCart(){
+        return this.cart;
+    }
+    
+    public Inventory getInventory(){
+        return this.inventory;
     }
 }
