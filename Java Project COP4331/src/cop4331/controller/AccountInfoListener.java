@@ -80,6 +80,7 @@ public class AccountInfoListener implements ActionListener{
                     user.setDate(DOB);
                     ((AccountInfoGUI)frame).setSubmitDetailLabel("Successfully made changes!");
                 }
+                Login.getInstance().createSerialization();
             }
             catch(StringIndexOutOfBoundsException x){
                 ((AccountInfoGUI)frame).setSubmitDetailLabel("Please enter a correct DOB.");

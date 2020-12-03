@@ -17,6 +17,7 @@ public class BrosRusApplication {
         Inventory inventory = user.getInventory();
         
         if(inventory.getInventory().size() == 0){
+            //new Product(name, description, price(double), quantity, userID(just use user.getUserID() for now),address(use user.getAddress()))
             Product uno = new Product("apples","A bag of apples that weighs around 1 pound.",2.65,50,user.getUserID(),user.getAddress());
             Product dos = new Product("apples","A bag of apples that weighs around 1 pound.",2.65,50,user.getUserID(),user.getAddress());
             Product tres = new Product("apples","A bag of apples that weighs around 1 pound.",2.65,50,user.getUserID(),user.getAddress());
