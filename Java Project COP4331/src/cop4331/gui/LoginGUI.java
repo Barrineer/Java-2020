@@ -56,6 +56,11 @@ public class LoginGUI extends MainFrameGUI{
         loginPanel.add(sellerButton);
         signUpPanel.add(newUserButton);
         
+        loginLabel.setFont(font);
+        newUserLabel.setFont(font);
+        newUserButton.setFont(font);
+        buyerButton.setFont(font);
+        sellerButton.setFont(font);
     }
     
     public void createButtonEvents(){
@@ -76,6 +81,11 @@ public class LoginGUI extends MainFrameGUI{
         sellerButton.addActionListener(command);
         backButton.addActionListener(command);
         submitButton.addActionListener(command);
+    }
+    
+    public void setFont(){
+        
+        
     }
     
     public void newUserGUI(){
@@ -141,6 +151,15 @@ public class LoginGUI extends MainFrameGUI{
         c.ipady = 0;
         loginPanel.add(submitButton,c);
         
+        userNameLabel.setFont(font);
+        passwordLabel.setFont(font);
+        confirmPasswordLabel.setFont(font);
+        userNameField.setFont(font);
+        passwordField.setFont(font);
+        confirmPasswordField.setFont(font);
+        submitButton.setFont(font);
+        backButton.setFont(font);
+        
         mainFrame.repaint();
     }
     
@@ -200,6 +219,13 @@ public class LoginGUI extends MainFrameGUI{
         c.ipady = 0;
         loginPanel.add(submitButton,c);
         
+        userNameLabel.setFont(font);
+        passwordLabel.setFont(font);
+        userNameField.setFont(font);
+        passwordField.setFont(font);
+        submitButton.setFont(font);
+        backButton.setFont(font);
+        
         mainFrame.repaint();
     }
     
@@ -224,6 +250,12 @@ public class LoginGUI extends MainFrameGUI{
         loginPanel.add(buyerButton);
         loginPanel.add(sellerButton);
         signUpPanel.add(newUserButton);
+
+        loginLabel.setFont(font);
+        newUserLabel.setFont(font);
+        newUserButton.setFont(font);
+        buyerButton.setFont(font);
+        sellerButton.setFont(font);
         
         mainFrame.repaint();
         

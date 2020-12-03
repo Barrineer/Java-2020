@@ -16,26 +16,35 @@ public class ShoppingGUI extends MainFrameGUI{
     
     public void createButtonEvents(){
         switchButton = new JButton("Switch to seller");
+        accountButton = new JButton(Login.getInstance().getCurrentUser().getUserName());
         
         switchButton.setActionCommand("Switch");
+        accountButton.setActionCommand("Account");
         
         switchButton.addActionListener(new ShoppingListener());
+        accountButton.addActionListener(new ShoppingListener());
+        
+        switchButton.setFont(font);
+        accountButton.setFont(font);
     }
     
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
-        createNewFrame("Welcome to BrosRus",1000,1000);
-        accountName = new JLabel(Login.getInstance().getCurrentUser().getUserName());
+        createNewFrame("BrosRus Application",1000,1000);
         createTopPanel();
         
         shoppingLabel = new JLabel("Select a product you would like to view",JLabel.CENTER);
+        c.gridy = 1;
+        c.weightx = 1;
+        c.weighty = 0.9;
+        c.anchor = NW;
         mainFrame.add(shoppingLabel,c);
         
         shoppingPanel = new JPanel();
         shoppingPanel.setLayout(new GridBagLayout());
         mainFrame.add(shoppingPanel);
         
-        
+        shoppingLabel.setFont(font);
         
         
     }
