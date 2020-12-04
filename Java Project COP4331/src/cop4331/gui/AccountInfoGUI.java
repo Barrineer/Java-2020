@@ -27,6 +27,8 @@ public class AccountInfoGUI extends MainFrameGUI{
     private JButton backButton;
     private JButton submitButton;
     
+    private static final int SPACING = 60;
+    
     public void createButtonEvents(){
         
         backButton = new JButton("Back");
@@ -90,7 +92,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridy = 1;
         c.gridwidth = 1;
         c.anchor = NE;
-        c.insets = new Insets(0,0,-100,0);
+        c.insets = new Insets(0,0,-SPACING,0);
         mainFrame.add(userNameLabel,c);
         
         userNameField = new JTextField(17);
@@ -105,6 +107,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 2;
         c.anchor = NE;
+        c.insets = new Insets(-SPACING,0,0,0);
         mainFrame.add(passwordLabel,c);
         
         passwordField = new JTextField(17);
@@ -119,6 +122,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 3;
         c.anchor = NE;
+        c.insets = new Insets(-SPACING*2,0,0,0);
         mainFrame.add(addressLabel,c);
         
         addressField = new JTextField(17);
@@ -133,6 +137,7 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 4;
         c.anchor = NE;
+        c.insets = new Insets(-SPACING*3,0,0,0);
         mainFrame.add(ageLabel,c);
         
         ageField = new JTextField(17);
@@ -144,23 +149,24 @@ public class AccountInfoGUI extends MainFrameGUI{
         
         //Submition Detail Label
         submitDetailLabel = new JLabel("Click Submit after making changes:");
-        c.gridx = 1;
+        c.gridx = 0;
         c.gridy = 5;
-        c.anchor = WEST;
+        c.gridwidth = 2;
+        c.anchor = NORTH;
+        c.insets = new Insets(-SPACING*4,0,0,0);
         mainFrame.add(submitDetailLabel,c);
         
-        //Back Button 
-        c.gridx = 0;
-        c.gridy = 6;
-        c.anchor = SW;
-        c.insets = new Insets(10,10,50,10);
-        mainFrame.add(backButton,c);
-        
         //Submit Button
-        c.gridx = 1;
-        c.anchor = NW;
-        c.insets = new Insets(10,10,100,10);
+        c.gridy = 6;
+        c.insets = new Insets(-SPACING*5,0,0,0);
         mainFrame.add(submitButton,c);
+        
+        //Back Button 
+        c.gridy = 7;
+        c.anchor = SW;
+        c.gridwidth = 1;
+        c.insets = new Insets(0,(int)(SPACING*1.5),(int)(SPACING*1.5),0);
+        mainFrame.add(backButton,c);
         
         //Set Font
         accountLabel.setFont(fontBiggerBold);

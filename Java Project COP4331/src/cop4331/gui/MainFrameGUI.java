@@ -62,15 +62,6 @@ public class MainFrameGUI {
     public void createTopPanel(){
         GridBagConstraints c = new GridBagConstraints();
         
-        //mainPanel = new JPanel();
-        //mainPanel.setLayout(new GridBagLayout());
-        
-        //Panel
-        //c.weightx = 1;
-        //c.weighty = 0.1;
-        //c.anchor = NW;
-        //mainFrame.add(mainPanel,c);
-        
         //Switch Button
         c.weightx = 0.1;
         c.weighty = 0.1;

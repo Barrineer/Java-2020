@@ -1,6 +1,7 @@
 package cop4331.controller;
 import cop4331.gui.InventoryGUI;
 import cop4331.gui.AccountInfoGUI;
+import cop4331.gui.CartGUI;
 import cop4331.gui.MainFrameGUI;
 import cop4331.model.Login;
 import java.awt.event.ActionEvent;
@@ -23,13 +24,16 @@ public class ShoppingListener implements ActionListener{
             gui.changeGUI(new InventoryGUI());
             gui.callGUI();
         }
-        else {
+        else if(command.equals("Account")) {
             frame.removeOldFrame();
             gui.changeGUI(new AccountInfoGUI());
             gui.callGUI();
         }
+        else{
+            frame.removeOldFrame();
+            gui.changeGUI(new CartGUI());
+            gui.callGUI();
+        }
     }
-    
-    
     
 }

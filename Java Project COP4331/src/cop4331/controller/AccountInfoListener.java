@@ -1,5 +1,4 @@
 package cop4331.controller;
-
 import cop4331.gui.AccountInfoGUI;
 import cop4331.gui.InventoryGUI;
 import cop4331.gui.MainFrameGUI;
@@ -40,7 +39,7 @@ public class AccountInfoListener implements ActionListener{
                 String password = ((AccountInfoGUI)frame).getPassword().replaceAll("\\s","");
                 String address = ((AccountInfoGUI)frame).getAddress().replaceAll("\\s","");
                 String age = ((AccountInfoGUI)frame).getAge().replaceAll("\\s","");            
-
+                
                 if(!(user.getUserName().equals(userName))){
                     user.setUserName(userName);
                     ((AccountInfoGUI)frame).setSubmitDetailLabel("Successfully made changes!");
