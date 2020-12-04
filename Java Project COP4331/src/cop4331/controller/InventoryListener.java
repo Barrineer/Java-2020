@@ -3,6 +3,7 @@ import cop4331.gui.AccountInfoGUI;
 import cop4331.gui.InventoryGUI;
 import cop4331.gui.MainFrameGUI;
 import cop4331.gui.NewProductGUI;
+import cop4331.gui.ProductDescriptionGUI;
 import cop4331.gui.ShoppingGUI;
 import cop4331.model.Login;
 import java.awt.event.ActionEvent;
@@ -36,7 +37,9 @@ public class InventoryListener implements ActionListener{
             gui.callGUI();
         }
         else if(command.length() > 5){
-            
+            frame.removeOldFrame();
+            gui.changeGUI(new ProductDescriptionGUI(((InventoryGUI)frame).getProduct(command.substring(4,8))));
+            gui.callGUI();
         }
         else{
             InventoryGUI inventoryGUI = new InventoryGUI();

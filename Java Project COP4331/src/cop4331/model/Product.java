@@ -10,7 +10,7 @@ public class Product implements java.io.Serializable{
     
     private String name;
     private String description;
-    private static int itemIDCounter = 1000;
+    public static int itemIDCounter = 1000;
     private int itemID;
     private double price;
     private int quantity;

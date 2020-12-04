@@ -3,6 +3,7 @@ import cop4331.model.*;
 import cop4331.controller.ShoppingListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 /**
  *
@@ -11,8 +12,16 @@ import javax.swing.*;
 public class ShoppingGUI extends MainFrameGUI{
         
     private JButton cartButton;
+    private JButton productButton;
+    private JButton nextPageButton;
     
+    private JLabel pageLabel;
     private JLabel shoppingLabel;
+    
+    private ArrayList<Product> products = getAllProducts();
+    private int itemAmount = countAllProducts();
+    private int pageCounter = 1;
+    private int totalPages = 1;
     
     public void createButtonEvents(){
         switchButton = new JButton("Switch to seller");
@@ -33,9 +42,17 @@ public class ShoppingGUI extends MainFrameGUI{
     }
     
     public void createGUI(){
+        setPageCounter();
+        setTotalPages();
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
         createTopPanel();
+        
+        boolean underFifteen = false;
+        int i = 0;
+        
+        if(itemAmount != 0)
+            underFifteen = true;
         
         c.anchor = NE;
         c.weightx = 0.1;
@@ -50,12 +67,122 @@ public class ShoppingGUI extends MainFrameGUI{
         c.weightx = 1;
         c.weighty = 0.9;
         c.anchor = NW;
-        c.insets = new Insets(3,3,3,0);
         mainFrame.add(shoppingLabel,c);
+        
+        //Put the Products onto the page.
+        while(underFifteen){
+            if(i >= 14 || i >= itemAmount-1)
+                underFifteen = false;
+            
+            String name = products.get(i+(countAllProducts()-itemAmount)).getName();
+            String productID = Integer.toString(products.get(i+(countAllProducts()-itemAmount)).getItemID());
+            c.gridy += 1;
+            createProductButton("ID: " + productID + " Name: " + name);
+            addProductButton(c);
+            i++;
+        }        
+        
+        //Page Label
+        c.gridy += 1;
+        c.gridx = 0;
+        c.anchor = CENTER;
+        pageLabel = new JLabel("Page:",JLabel.CENTER);
+        mainFrame.add(pageLabel,c);
+        
+        //Pages
+        for(int j = 1;j < totalPages+1;j++){
+            c.gridx += 1;
+            createPageButton(Integer.toString(j));
+            addPageButton(c);
+        }
+        
+        
+        shoppingLabel.setFont(font);
+        pageLabel.setFont(font);
 
         
         shoppingLabel.setFont(font);        
         
     }
+    
+    public void createProductButton(String productName){
+        productButton = new JButton(productName);
+        productButton.setActionCommand(productName);
+        productButton.addActionListener(new ShoppingListener());
+        productButton.setFont(font);
+    }
+    
+    public void addProductButton(GridBagConstraints c){
+        mainFrame.add(productButton,c);
+    }
+    
+    public Product getProduct(String productID){
+        Product product = new Product("none","none",0,0,0,"none");
+        for(int i = 0;i < products.size();i++){
+            if(Integer.parseInt(productID) == products.get(i).getItemID()){
+                product = products.get(i);
+            }
+        }
+        return product;
+    }
+    
+    public void createPageButton(String number){
+        nextPageButton = new JButton(number);
+        nextPageButton.setActionCommand(number);
+        nextPageButton.addActionListener(new ShoppingListener());
+        nextPageButton.setFont(font);
+    }
+    
+    public void addPageButton(GridBagConstraints c){
+        mainFrame.add(nextPageButton,c);
+    }
+    
+    private void setPageCounter(){
+        pageCounter = (countAllProducts() - itemAmount)/15 + 1;
+    }
+    
+    public int getPageNumber(){
+        return pageCounter;
+    }
+    
+    private void setTotalPages(){
+        if(countAllProducts() % 15 == 0){
+            totalPages = countAllProducts()/15;
+        }
+        else{
+            totalPages = countAllProducts()/15 + 1;
+        }
+    }
+    
+    public void setItemAmount(int number){
+        itemAmount = number;
+    }
+    
+    private ArrayList<Product> getAllProducts(){
+        ArrayList<User> users = Login.getInstance().getUsers();
+        ArrayList<Product> allProducts = new ArrayList<>();
+        
+        for(int i = 0;i < users.size();i++){
+            ArrayList<Product> inventory = users.get(i).getInventory().getInventory();
+            for(int j = 0;j < inventory.size();j++){
+                allProducts.add(inventory.get(j));
+            }
+        }
+        return allProducts;
+    }
+    
+    public int countAllProducts(){
+        int number = 0;
+        ArrayList<User> users = Login.getInstance().getUsers();
+        
+        for(int i = 0;i < users.size();i++){
+            ArrayList<Product> inventory = users.get(i).getInventory().getInventory();
+            for(int j = 0;j < inventory.size();j++){
+                number += 1;
+            }
+        }
+        return number;
+    }
+    
     
 }

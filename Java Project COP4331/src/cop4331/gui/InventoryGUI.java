@@ -22,6 +22,10 @@ public class InventoryGUI extends MainFrameGUI{
     private int pageCounter = 1;
     private int totalPages = 1;
     
+    private User user = Login.getInstance().getCurrentUser();
+    private Inventory inventory = user.getInventory();
+    private ArrayList<Product> products = inventory.getInventory();
+    
     public void createButtonEvents(){
         switchButton = new JButton("Switch to buyer");
         accountButton = new JButton(Login.getInstance().getCurrentUser().getUserName());
@@ -44,9 +48,7 @@ public class InventoryGUI extends MainFrameGUI{
         setPageCounter();
         setTotalPages();
         GridBagConstraints c = new GridBagConstraints();
-        User user = Login.getInstance().getCurrentUser();
-        Inventory inventory = user.getInventory();
-        ArrayList<Product> products = inventory.getInventory();
+        
         boolean underFifteen = false;
         int i = 0;
         
@@ -73,8 +75,9 @@ public class InventoryGUI extends MainFrameGUI{
                 underFifteen = false;
             
             String name = products.get(i+(products.size()-itemAmount)).getName();
+            String productID = Integer.toString(products.get(i+(products.size()-itemAmount)).getItemID());
             c.gridy += 1;
-            createProductButton("Name: " + name);
+            createProductButton("ID: " + productID + " Name: " + name);
             addProductButton(c);
             i++;
         }        
@@ -108,6 +111,16 @@ public class InventoryGUI extends MainFrameGUI{
     
     public void addProductButton(GridBagConstraints c){
         mainFrame.add(productButton,c);
+    }
+    
+    public Product getProduct(String productID){
+        Product product = new Product("none","none",0,0,0,"none");
+        for(int i = 0;i < products.size();i++){
+            if(Integer.parseInt(productID) == products.get(i).getItemID()){
+                product = products.get(i);
+            }
+        }
+        return product;
     }
     
     public void createPageButton(String number){

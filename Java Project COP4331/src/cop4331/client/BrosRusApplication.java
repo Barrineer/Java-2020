@@ -53,6 +53,7 @@ public class BrosRusApplication {
 
             Login.getInstance().createSerialization();
         }
+        
     }
     // for testing
     public static void printInventory(){
@@ -67,9 +68,22 @@ public class BrosRusApplication {
     
     public static void printUsers(){
         ArrayList<User> users = Login.getInstance().getUsers();
-                
+        System.out.println(users.size());
         for(int i = 0;i < users.size();i++){
             System.out.println(users.get(i).getUserName());
+        }
+    }
+    
+    public static void setItemIDCounter(){
+        ArrayList<User> users = Login.getInstance().getUsers();
+        Product dummy = new Product("","",0,0,0,"");
+        dummy.itemIDCounter = 1000;
+        
+        for(int i = 0;i < users.size();i++){
+            ArrayList<Product> inventory = users.get(i).getInventory().getInventory();
+            for(int j = 0;j < inventory.size();j++){
+                dummy.itemIDCounter += 1;
+            }
         }
     }
     
@@ -77,8 +91,9 @@ public class BrosRusApplication {
     public static void main(String args[]){
         Login.getInstance().loadSerialization();
         createProducts();
-        printUsers();
         printInventory();
+        printUsers();
+        setItemIDCounter();
         CurrentGUI.getInstance().callGUI();
     }
     
