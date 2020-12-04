@@ -39,14 +39,16 @@ public class ShoppingGUI extends MainFrameGUI{
         createNewFrame("BrosRus Application",1000,1000);
         createTopPanel();
         
-        c.anchor = BASELINE_LEADING;
+        c.anchor = NE;
         c.weightx = 0.1;
         c.weighty = 0.1;
-        c.insets = new Insets(3,0,0,3);
+        c.gridx = 99;
+        c.insets = new Insets(3,0,0,0);
         mainFrame.add(cartButton,c);
         
         shoppingLabel = new JLabel("Select a product you would like to view",JLabel.CENTER);
         c.gridy = 1;
+        c.gridx = 0;
         c.weightx = 1;
         c.weighty = 0.9;
         c.anchor = NW;

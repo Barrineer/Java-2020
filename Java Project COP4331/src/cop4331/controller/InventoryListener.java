@@ -1,6 +1,8 @@
 package cop4331.controller;
 import cop4331.gui.AccountInfoGUI;
+import cop4331.gui.InventoryGUI;
 import cop4331.gui.MainFrameGUI;
+import cop4331.gui.NewProductGUI;
 import cop4331.gui.ShoppingGUI;
 import cop4331.model.Login;
 import java.awt.event.ActionEvent;
@@ -23,9 +25,25 @@ public class InventoryListener implements ActionListener{
             gui.changeGUI(new ShoppingGUI());
             gui.callGUI();
         }
-        else {
+        else if(command.equals("Account")){
             frame.removeOldFrame();
             gui.changeGUI(new AccountInfoGUI());
+            gui.callGUI();
+        }
+        else if(command.equals("New")){
+            frame.removeOldFrame();
+            gui.changeGUI(new NewProductGUI());
+            gui.callGUI();
+        }
+        else if(command.length() > 5){
+            
+        }
+        else{
+            InventoryGUI inventoryGUI = new InventoryGUI();
+            inventoryGUI.setItemAmount(Login.getInstance().getCurrentUser().getInventory().getInventory().size() - (Integer.parseInt(command)-1)*15);
+            
+            frame.removeOldFrame();
+            gui.changeGUI(inventoryGUI);
             gui.callGUI();
         }
     }

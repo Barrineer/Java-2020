@@ -27,8 +27,6 @@ public class AccountInfoGUI extends MainFrameGUI{
     private JButton backButton;
     private JButton submitButton;
     
-    private static final int SPACING = 60;
-    
     public void createButtonEvents(){
         
         backButton = new JButton("Back");

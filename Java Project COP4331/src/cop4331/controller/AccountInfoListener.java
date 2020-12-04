@@ -35,9 +35,9 @@ public class AccountInfoListener implements ActionListener{
         else{
             try{
                 
-                String userName = ((AccountInfoGUI)frame).getUserName().replaceAll("\\s","");
-                String password = ((AccountInfoGUI)frame).getPassword().replaceAll("\\s","");
-                String address = ((AccountInfoGUI)frame).getAddress().replaceAll("\\s","");
+                String userName = ((AccountInfoGUI)frame).getUserName().trim();
+                String password = ((AccountInfoGUI)frame).getPassword().trim();
+                String address = ((AccountInfoGUI)frame).getAddress().trim();
                 String age = ((AccountInfoGUI)frame).getAge().replaceAll("\\s","");            
                 
                 if(!(user.getUserName().equals(userName))){

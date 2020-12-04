@@ -49,6 +49,8 @@ public class MainFrameGUI {
     protected final Font fontBiggest = new Font(Font.SANS_SERIF,Font.PLAIN,18);
     protected final Font fontBiggestBold = new Font(Font.SANS_SERIF,Font.BOLD,18);
     protected final Font fontBiggestItalic = new Font(Font.SANS_SERIF,Font.ITALIC,18);
+    
+    protected static final int SPACING = 60;
 
     
     public void createNewFrame(String str,int width,int height){
@@ -65,12 +67,14 @@ public class MainFrameGUI {
         //Switch Button
         c.weightx = 0.1;
         c.weighty = 0.1;
+        c.gridx = 0;
         c.anchor = NW;
         c.insets = new Insets(3,3,0,0);
         switchButton.setFont(font);
         mainFrame.add(switchButton,c);
         //Account Button
         c.anchor = NE;
+        c.gridx = 100;
         c.insets = new Insets(3,0,0,3);
         accountButton.setFont(font);
         mainFrame.add(accountButton,c);
