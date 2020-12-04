@@ -68,7 +68,7 @@ public class BrosRusApplication {
     
     public static void printUsers(){
         ArrayList<User> users = Login.getInstance().getUsers();
-        System.out.println(users.size());
+        System.out.println("Number of users: " + users.size());
         for(int i = 0;i < users.size();i++){
             System.out.println(users.get(i).getUserName());
         }
