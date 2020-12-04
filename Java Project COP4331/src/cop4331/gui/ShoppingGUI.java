@@ -9,9 +9,7 @@ import javax.swing.*;
  * @author mikey
  */
 public class ShoppingGUI extends MainFrameGUI{
-    
-    private JPanel shoppingPanel;
-    
+        
     private JButton cartButton;
     
     private JLabel shoppingLabel;
@@ -54,10 +52,7 @@ public class ShoppingGUI extends MainFrameGUI{
         c.anchor = NW;
         c.insets = new Insets(3,3,3,0);
         mainFrame.add(shoppingLabel,c);
-        
-        shoppingPanel = new JPanel();
-        shoppingPanel.setLayout(new GridBagLayout());
-        mainFrame.add(shoppingPanel);
+
         
         shoppingLabel.setFont(font);        
         

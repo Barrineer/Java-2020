@@ -72,6 +72,7 @@ public class MainFrameGUI {
         c.insets = new Insets(3,3,0,0);
         switchButton.setFont(font);
         mainFrame.add(switchButton,c);
+        
         //Account Button
         c.anchor = NE;
         c.gridx = 100;

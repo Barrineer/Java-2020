@@ -2,6 +2,7 @@ package cop4331.controller;
 import cop4331.gui.CartGUI;
 import cop4331.gui.CheckoutGUI;
 import cop4331.gui.MainFrameGUI;
+import cop4331.gui.ReceiptGUI;
 import cop4331.model.Login;
 import cop4331.model.User;
 import java.awt.event.ActionEvent;
@@ -25,7 +26,9 @@ public class CheckoutListener implements ActionListener{
             gui.callGUI();
         }
         else{
-            
+            frame.removeOldFrame();
+            gui.changeGUI(new ReceiptGUI());
+            gui.callGUI();
         }
         
     }
