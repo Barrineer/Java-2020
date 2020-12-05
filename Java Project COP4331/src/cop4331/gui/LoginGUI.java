@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * The Login GUI for the BrosRus Application.
- * @author mikey
+ * @author mikey, malcolm
  */
 public class LoginGUI extends MainFrameGUI{
 
@@ -115,7 +115,7 @@ public class LoginGUI extends MainFrameGUI{
         c.ipady = 0;
         loginPanel.add(passwordLabel,c);
         
-        passwordField = new JTextField(17);
+        passwordField = new JPasswordField(17);
         c.gridy = 1;
         c.gridx = 1;
         c.ipady = 0;
@@ -127,7 +127,7 @@ public class LoginGUI extends MainFrameGUI{
         c.ipady = 0;
         loginPanel.add(confirmPasswordLabel,c);
         
-        confirmPasswordField = new JTextField(17);
+        confirmPasswordField = new JPasswordField(17);
         c.gridy = 2;
         c.gridx = 1;
         c.ipady = 0;
@@ -195,7 +195,7 @@ public class LoginGUI extends MainFrameGUI{
         c.ipady = 0;
         loginPanel.add(passwordLabel,c);
         
-        passwordField = new JTextField(17);
+        passwordField = new JPasswordField(17);
         c.gridy = 1;
         c.gridx = 1;
         c.ipady = 0;
