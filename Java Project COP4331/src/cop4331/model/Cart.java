@@ -59,15 +59,14 @@ public class Cart implements java.io.Serializable{
         for(int i = 0;i < this.productList.size();i++){
             currentQuantity = this.productList.get(i).getQuantity();
             if(this.productList.get(i).getItemID() == product.getItemID()){
-                if(currentQuantity <= quantity)
-                    currentQuantity -= quantity;
+                    this.productList.get(i).setQuantity(currentQuantity - quantity);
             }
-            if(currentQuantity == 0){
+            if(this.productList.get(i).getQuantity() <= 0){
                 this.productList.remove(i);
                 this.total -= 1;
             }
                 
-        }           
+        }        
     }
     /**
      * Creates a clone of the Cart.

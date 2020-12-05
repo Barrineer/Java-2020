@@ -29,7 +29,7 @@ public class ProductDescriptionGUI extends MainFrameGUI{
     
     private JButton backButton;
     private JButton addButton;
-    private JButton editButton;
+    private JButton removeButton;
     
     
     private Product product;
@@ -43,19 +43,19 @@ public class ProductDescriptionGUI extends MainFrameGUI{
     
         backButton = new JButton("Back");
         addButton = new JButton("Add");
-        editButton = new JButton("Edit");
+        removeButton = new JButton("Remove");
         
         backButton.setActionCommand("Back");
         addButton.setActionCommand("Add");
-        editButton.setActionCommand("Edit");
+        removeButton.setActionCommand("Remove");
         
         backButton.addActionListener(new ProductDescriptionListener());
         addButton.addActionListener(new ProductDescriptionListener());
-        editButton.addActionListener(new ProductDescriptionListener());
+        removeButton.addActionListener(new ProductDescriptionListener());
         
         backButton.setFont(font);
         addButton.setFont(font);
-        editButton.setFont(font);
+        removeButton.setFont(font);
         
     }
     
@@ -118,7 +118,7 @@ public class ProductDescriptionGUI extends MainFrameGUI{
             c.gridwidth = 2;
             c.anchor = CENTER;
             c.insets = new Insets(-SPACING,0,0,0);
-            mainFrame.add(editButton,c);
+            mainFrame.add(removeButton,c);
         }
         
         //Back Button
@@ -134,6 +134,14 @@ public class ProductDescriptionGUI extends MainFrameGUI{
     
     public Product getProduct(){
         return product;
+    }
+    
+    public int getQuantity(){
+        return Integer.parseInt(quantitySelectionField.getText());
+    }
+    
+    public void setQuantityLabel(String text){
+        quantitySelectionLabel.setText(text);
     }
     
 }
