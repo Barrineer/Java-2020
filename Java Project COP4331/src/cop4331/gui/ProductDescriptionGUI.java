@@ -14,14 +14,11 @@ import java.util.*;
 public class ProductDescriptionGUI extends MainFrameGUI{
     
     private JLabel productHeadingLabel;
-    private JLabel productDescriptionLabel;
-    private JLabel productPriceLabel;
     
     private JLabel nameLabel;
     private JLabel descriptionLabel;
     private JLabel priceLabel;
     private JLabel quantityLabel;
-    private JLabel sellerIDLabel;
     private JLabel addressLabel;
     private JLabel quantitySelectionLabel;
     
@@ -70,31 +67,40 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         c.gridy = 0;
         c.gridx = 0;
         c.anchor = CENTER;
-        c.gridwidth = 2;
         mainFrame.add(productHeadingLabel,c);
         
-        productDescriptionLabel = new JLabel(product.getDesc()) ;
-        c.gridy = 2;
-        mainFrame.add(productDescriptionLabel, c);
+        nameLabel = new JLabel("Name: " + product.getName());
+        c.gridy += 1;
+        c.gridwidth = 1;
+        mainFrame.add(nameLabel,c);
+        
+        descriptionLabel = new JLabel(product.getDesc()) ;
+        c.gridy += 1;
+        mainFrame.add(descriptionLabel, c);
 
-        productPriceLabel = new JLabel("Price: $" + String.valueOf(product.getPrice()));
-        c.gridy = 3;
-        mainFrame.add((productPriceLabel), c);
+        priceLabel = new JLabel("Price: $" + String.valueOf(product.getPrice()));
+        c.gridy += 1;
+        mainFrame.add(priceLabel, c);
+        
+        quantityLabel = new JLabel("Quantity: " + Double.toString(product.getQuantity()));
+        c.gridy += 1;
+        mainFrame.add(quantityLabel,c);
+        
+        addressLabel = new JLabel("Address: " + product.getAdress());
+        c.gridy += 1;
+        mainFrame.add(addressLabel,c);
 
         //Only insert the Add Button and Quantity Text Field if Account Type is Buyer
         if(user.getAccountType().equals("Buyer")){
             //Quantity Label
             quantitySelectionLabel = new JLabel("Quantity to add: ");
             c.gridy += 1;
-            c.gridx = 0;
-            c.anchor = NE;
             c.gridwidth = 1;
             c.insets = new Insets(-SPACING,0,0,0);
             mainFrame.add(quantitySelectionLabel,c);
             
             //Quantity Field
-            c.gridx = 1;
-            c.anchor = NW;
+            c.gridy += 1;
             quantitySelectionField = new JTextField(5);
             quantitySelectionField.setText("1");
             mainFrame.add(quantitySelectionField,c);
@@ -102,7 +108,6 @@ public class ProductDescriptionGUI extends MainFrameGUI{
             //Add Button
             c.gridy += 1;
             c.gridx = 0;
-            c.gridwidth = 2;
             c.anchor = CENTER;
             c.insets = new Insets(-SPACING*2,0,0,0);
             mainFrame.add(addButton,c);
@@ -130,6 +135,14 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         mainFrame.add(backButton,c);
         
         productHeadingLabel.setFont(fontBiggerBold);
+        nameLabel.setFont(fontBold);
+        descriptionLabel.setFont(fontBold);
+        priceLabel.setFont(fontBold);
+        quantityLabel.setFont(fontBold);
+        addressLabel.setFont(fontBold);
+        quantitySelectionLabel.setFont(fontBold);
+        quantitySelectionField.setFont(font);
+        
     }
     
     public Product getProduct(){

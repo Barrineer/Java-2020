@@ -91,8 +91,6 @@ public class BrosRusApplication {
     public static void main(String args[]){
         Login.getInstance().loadSerialization();
         createProducts();
-        printInventory();
-        printUsers();
         setItemIDCounter();
         CurrentGUI.getInstance().callGUI();
     }

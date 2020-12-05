@@ -27,8 +27,9 @@ public class CheckoutListener implements ActionListener{
         }
         else{
             frame.removeOldFrame();
-            gui.changeGUI(new ReceiptGUI());
+            gui.changeGUI(new ReceiptGUI(((CheckoutGUI)frame).getReceipt()));
             gui.callGUI();
+            user.getCart().emptyCart();
         }
         
     }

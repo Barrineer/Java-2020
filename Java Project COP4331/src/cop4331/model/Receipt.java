@@ -21,9 +21,28 @@ public class Receipt {
      * Calculates the total price of all Products in the Cart.
      */
     public void calculateTotal(){
+        int sum = 0;
         for(int i = 0; i < this.productList.getProductList().size();i++){
-            this.total += (this.productList.getProductList().get(i).getPrice() * this.productList.getProductList().get(i).getQuantity());
+            sum += (this.productList.getProductList().get(i).getPrice() * this.productList.getProductList().get(i).getQuantity());
         }
+        total = sum;
+    }
+    
+    public void setPaymentType(String paymentType){
+        this.paymentType = paymentType;
+    }
+    
+    public int getCheckoutID(){
+        return checkoutID;
+    }
+    
+    public String getPaymentType(){
+        return paymentType;
+    }
+    
+    public double getTotal(){
+        calculateTotal();
+        return total;
     }
     
 }

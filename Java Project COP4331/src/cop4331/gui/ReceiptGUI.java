@@ -18,13 +18,11 @@ public class ReceiptGUI extends MainFrameGUI{
     
     private JButton returnButton;
     
-    /* Setup ShoppingGUI/Listener and CartGUI/Listener first
     private Receipt receipt;
     
     public ReceiptGUI(Receipt receipt){
         this.receipt = receipt;
     }
-    */
     
     public void createButtonEvents(){
     
@@ -52,20 +50,20 @@ public class ReceiptGUI extends MainFrameGUI{
         mainFrame.add(receiptLabel,c);
         
         //Order ID Label
-        orderIDLabel = new JLabel("Order ID: ");
+        orderIDLabel = new JLabel("Order ID: " + receipt.getCheckoutID());
         c.gridy = 1;
         c.anchor = NORTH;
         c.insets = new Insets(0,0,-SPACING,0);
         mainFrame.add(orderIDLabel,c);
         
         //Payment Type Label
-        paymentTypeLabel = new JLabel("Payment Type: ");
+        paymentTypeLabel = new JLabel("Payment Type: " + receipt.getPaymentType());
         c.gridy = 2;
         c.insets = new Insets(-SPACING,0,0,0);
         mainFrame.add(paymentTypeLabel,c);
         
         //Final Price Label
-        finalPriceLabel = new JLabel("Total Price: ");
+        finalPriceLabel = new JLabel("Total Price: " + Double.toString(receipt.getTotal()));
         c.gridy = 3;
         c.insets = new Insets(-SPACING*2,0,0,0);
         mainFrame.add(finalPriceLabel,c);

@@ -47,6 +47,10 @@ public class Cart implements java.io.Serializable{
         productList.add(temp);
         this.total += 1;
     }
+    
+    public void emptyCart(){
+        productList = new ArrayList<>();
+    }
     /**
      * Removes a quantity of a Product from the Cart.
      * If the quantity of the Product reaches 0, the item is removed from the Cart
