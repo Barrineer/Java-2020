@@ -44,13 +44,27 @@ public class CartListener implements ActionListener{
         else if(command.substring(0,10).equals("Remove One")){
             Product product = new Product("","",1,1,1,"");
             ArrayList<Product> cart = user.getCart().getProductList();
+            ArrayList<User> users = Login.getInstance().getUsers();
             product.itemIDCounter -= 1;
+            int quantity = 0;
             
             for(int i = 0;i<cart.size();i++){
-                if(cart.get(i).getItemID() == Integer.parseInt(command.substring(11)))
+                if(cart.get(i).getItemID() == Integer.parseInt(command.substring(11))){
                     product = cart.get(i);
+                    quantity = cart.get(i).getQuantity();
+                }
             }
+            
             user.getCart().removeProduct(product, 1);
+            
+            for(int j = 0;j < users.size();j++){
+                ArrayList<Product> inventory = users.get(j).getInventory().getInventory();
+                for(int k = 0;k < inventory.size();k++){
+                    if(inventory.get(k).getItemID() == product.getItemID()){
+                        inventory.get(k).setQuantity(quantity);
+                    }
+                }
+            }
             
             frame.removeOldFrame();
             gui.changeGUI(new CartGUI());
@@ -59,13 +73,26 @@ public class CartListener implements ActionListener{
         else if(command.substring(0,10).equals("Remove All")){
             Product product = new Product("","",1,1,1,"");
             ArrayList<Product> cart = user.getCart().getProductList();
+            ArrayList<User> users = Login.getInstance().getUsers();
             product.itemIDCounter -= 1;
+            int quantity = 0;
             
             for(int i = 0;i<cart.size();i++){
-                if(cart.get(i).getItemID() == Integer.parseInt(command.substring(11)))
+                if(cart.get(i).getItemID() == Integer.parseInt(command.substring(11))){
                     product = cart.get(i);
+                    quantity = cart.get(i).getQuantity();
+                }
             }
             user.getCart().removeProduct(product, product.getQuantity());
+            
+            for(int j = 0;j < users.size();j++){
+                ArrayList<Product> inventory = users.get(j).getInventory().getInventory();
+                for(int k = 0;k < inventory.size();k++){
+                    if(inventory.get(k).getItemID() == product.getItemID()){
+                        inventory.get(k).setQuantity(quantity);
+                    }
+                }
+            }
             
             frame.removeOldFrame();
             gui.changeGUI(new CartGUI());

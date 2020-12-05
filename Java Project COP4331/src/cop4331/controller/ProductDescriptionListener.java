@@ -40,14 +40,16 @@ public class ProductDescriptionListener implements ActionListener{
                 Product product = ((ProductDescriptionGUI)frame).getProduct();
                 int quantity = ((ProductDescriptionGUI)frame).getQuantity();
                 
-                if(quantity > product.getQuantity()){
+                if(quantity > product.getQuantity() && product.getQuantity() != 0){
                     ((ProductDescriptionGUI)frame).setQuantityLabel("Quantity too large!");
+                }
+                else if(product.getQuantity() == 0){
+                    ((ProductDescriptionGUI)frame).setQuantityLabel("All Sold Out Sorry!");
                 }
                 else{
                     user.getCart().addProduct(product,quantity);
-                    frame.removeOldFrame();
-                    gui.changeGUI(new ShoppingGUI());
-                    gui.callGUI();
+                    product.setQuantity(product.getQuantity() - quantity);
+                    ((ProductDescriptionGUI)frame).setQuantityLabel("Item Added Successfully!");
                 }
             }
             catch(NumberFormatException x){
