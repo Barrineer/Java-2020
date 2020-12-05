@@ -25,7 +25,7 @@ public class BrosRusApplication {
             Product six = new Product("Almonds","A bag of almonds that weighs around 16 ounces.",6.50,12,user.getUserID(),user.getAddress());
             Product seven = new Product("Airpods","Airpod earbuds.",150.00,6,user.getUserID(),user.getAddress());
             Product eight = new Product("Monitor","A 144Hz 27in Gaming Monitor.",199.99,10,user.getUserID(),user.getAddress());
-            Product nine = new Product("Computer Mouse","A wireless gaming mouse with up to 16000dpi.",79.99,20,user.getUserID(),user.getAddress());
+            Product nine = new Product("Computer Mouse","A wireless gaming mouse with up to 16000 dpi.",79.99,20,user.getUserID(),user.getAddress());
             Product ten = new Product("Keyboard","A wired RGB mechanical keyboard.",120.00,18,user.getUserID(),user.getAddress());
             Product eleven = new Product("Headphones","A pair of great sounding, high quality headphones.",99.50,30,user.getUserID(),user.getAddress());
             Product twelve = new Product("HD Camera","A USB Camera with 100p HD Quality.",36.75,50,user.getUserID(),user.getAddress());

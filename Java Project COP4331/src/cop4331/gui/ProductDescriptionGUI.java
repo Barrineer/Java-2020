@@ -9,11 +9,13 @@ import java.util.*;
 
 /**
  *
- * @author mikey
+ * @author mikey, malcolm
  */
 public class ProductDescriptionGUI extends MainFrameGUI{
     
     private JLabel productHeadingLabel;
+    private JLabel productDescriptionLabel;
+    private JLabel productPriceLabel;
     
     private JLabel nameLabel;
     private JLabel descriptionLabel;
@@ -71,8 +73,14 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         c.gridwidth = 2;
         mainFrame.add(productHeadingLabel,c);
         
-        
-        
+        productDescriptionLabel = new JLabel(product.getDesc()) ;
+        c.gridy = 2;
+        mainFrame.add(productDescriptionLabel, c);
+
+        productPriceLabel = new JLabel("Price: $" + String.valueOf(product.getPrice()));
+        c.gridy = 3;
+        mainFrame.add((productPriceLabel), c);
+
         //Only insert the Add Button and Quantity Text Field if Account Type is Buyer
         if(user.getAccountType().equals("Buyer")){
             //Quantity Label
