@@ -42,7 +42,7 @@ public class CartListener implements ActionListener{
             gui.callGUI();
         }
         else if(command.substring(0,10).equals("Remove One")){
-            Product product = new Product("","",1,1,1,"");
+            Product product = new Product("","",1,1,1,1,"");
             ArrayList<Product> cart = user.getCart().getProductList();
             ArrayList<User> users = Login.getInstance().getUsers();
             product.itemIDCounter -= 1;
@@ -71,7 +71,7 @@ public class CartListener implements ActionListener{
             gui.callGUI();
         }
         else if(command.substring(0,10).equals("Remove All")){
-            Product product = new Product("","",1,1,1,"");
+            Product product = new Product("","",1,1,1,1,"");
             ArrayList<Product> cart = user.getCart().getProductList();
             ArrayList<User> users = Login.getInstance().getUsers();
             product.itemIDCounter -= 1;

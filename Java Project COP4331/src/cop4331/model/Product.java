@@ -13,6 +13,7 @@ public class Product implements java.io.Serializable{
     public static int itemIDCounter = 1000;
     private int itemID;
     private double price;
+    private double originalPrice;
     private int quantity;
     private int sellerID;
     private String address;
@@ -20,12 +21,13 @@ public class Product implements java.io.Serializable{
      * Constructor for a new Product.
      * Gives a unique itemID.
      */
-    public Product(String name, String description, double price, int quantity, int sellerID, String address){
+    public Product(String name, String description, double price,double originalPrice, int quantity, int sellerID, String address){
         
         this.name = name;
         this.description = description;
         itemID = createNewID();
         this.price = price;
+        this.originalPrice = originalPrice;
         this.quantity = quantity;
         this.sellerID = sellerID;
         this.address = address;
@@ -36,11 +38,12 @@ public class Product implements java.io.Serializable{
      * Private constructor for a new Product.
      * Gives an itemID that may belong to another Product.
      */
-    private Product(String name, String description, int itemID, double price, int quantity, int sellerID, String address){
+    private Product(String name, String description, int itemID, double price,double originalPrice, int quantity, int sellerID, String address){
         this.name = name;
         this.description = description;
         this.itemID = itemID;
         this.price = price;
+        this.originalPrice = originalPrice;
         this.quantity = quantity;
         this.sellerID = sellerID;
         this.address = address;
@@ -59,8 +62,18 @@ public class Product implements java.io.Serializable{
      * @return Returns the cloned Product.
      */
     public Product clone(){
-        Product clone = new Product(this.name,this.description,this.itemID,this.price,this.quantity,this.sellerID,this.address);
+        Product clone = new Product(this.name,this.description,this.itemID,this.price,this.originalPrice,this.quantity,this.sellerID,this.address);
         return clone;
+    }
+    /**
+     * Tests if the product is equal based on the itemID.
+     * @param product
+     * @return 
+     */
+    public boolean equals(Product product){
+        if(this.itemID == product.itemID)
+            return true;
+        return false;                    
     }
     /**
      * Getter for the name attribute.
@@ -110,6 +123,20 @@ public class Product implements java.io.Serializable{
      */
     public void setPrice(double price){
         this.price = price;
+    }
+    /**
+     * Getter for the original price attribute.
+     * @return Returns the original price attribute for this instance of Product.
+     */
+    public double getOriginalPrice(){
+        return this.originalPrice;
+    }
+    /**
+     * Setter for the original price attribute.
+     * @param price The new original price of the Product.
+     */
+    public void setOriginalPrice(double price){
+        this.originalPrice = price;
     }
     /**
      * Getter for the quantity attribute.

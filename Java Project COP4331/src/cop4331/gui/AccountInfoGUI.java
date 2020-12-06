@@ -18,6 +18,9 @@ public class AccountInfoGUI extends MainFrameGUI{
     private JLabel addressLabel;
     private JLabel ageLabel;
     private JLabel submitDetailLabel;
+    private JLabel revenueLabel;
+    private JLabel costsLabel;
+    private JLabel profitsLabel;
     
     private JTextField userNameField;
     private JTextField passwordField;
@@ -95,7 +98,6 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridy = 1;
         c.gridwidth = 1;
         c.anchor = NE;
-        c.insets = new Insets(0,0,-SPACING,0);
         mainFrame.add(userNameLabel,c);
         
         userNameField = new JTextField(17);
@@ -110,7 +112,6 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 2;
         c.anchor = NE;
-        c.insets = new Insets(-SPACING,0,0,0);
         mainFrame.add(passwordLabel,c);
         
         passwordField = new JTextField(17);
@@ -125,7 +126,6 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 3;
         c.anchor = NE;
-        c.insets = new Insets(-SPACING*2,0,0,0);
         mainFrame.add(addressLabel,c);
         
         addressField = new JTextField(17);
@@ -140,7 +140,6 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 4;
         c.anchor = NE;
-        c.insets = new Insets(-SPACING*3,0,0,0);
         mainFrame.add(ageLabel,c);
         
         ageField = new JTextField(17);
@@ -156,16 +155,39 @@ public class AccountInfoGUI extends MainFrameGUI{
         c.gridy = 5;
         c.gridwidth = 2;
         c.anchor = NORTH;
-        c.insets = new Insets(-SPACING*4,0,0,0);
         mainFrame.add(submitDetailLabel,c);
         
         //Submit Button
         c.gridy = 6;
-        c.insets = new Insets(-SPACING*5,0,0,0);
         mainFrame.add(submitButton,c);
         
+        //Add Revenue, Costs, and Profits if AccountType = Seller
+        if(user.getAccountType().equals("Seller")){
+            user.getInventory().calculateProfits();
+            //Revenue Label
+            revenueLabel = new JLabel("Revenue: $" + (double)(Math.round(user.getInventory().getRevenues()*100))/100);
+            c.gridy += 1;
+            c.anchor = CENTER;
+            mainFrame.add(revenueLabel,c);
+            
+            //Costs Label
+            costsLabel = new JLabel("Costs: $" + (double)(Math.round(user.getInventory().getCosts()*100))/100);
+            c.gridy += 1;
+            mainFrame.add(costsLabel,c);
+            
+            //Profits Label
+            profitsLabel = new JLabel("Profits: $" + (double)(Math.round(user.getInventory().getProfits()*100))/100);
+            c.gridy += 1;
+            mainFrame.add(profitsLabel,c);
+            
+            revenueLabel.setFont(fontBold);
+            costsLabel.setFont(fontBold);
+            profitsLabel.setFont(fontBold);
+            
+        }
+        
         //Back Button 
-        c.gridy = 7;
+        c.gridy += 1;
         c.anchor = SW;
         c.gridwidth = 1;
         c.insets = new Insets(0,(int)(SPACING*1.5),(int)(SPACING*1.5),0);

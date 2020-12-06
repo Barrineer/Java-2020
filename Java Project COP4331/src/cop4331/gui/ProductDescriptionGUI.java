@@ -82,11 +82,11 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         c.gridy += 1;
         mainFrame.add(descriptionLabel, c);
 
-        priceLabel = new JLabel("Price: $" + String.valueOf(product.getPrice()));
+        priceLabel = new JLabel("Price: $" + String.valueOf((double)Math.round(product.getPrice()*100)/100));
         c.gridy += 1;
         mainFrame.add(priceLabel, c);
         
-        quantityLabel = new JLabel("Quantity: " + Double.toString(product.getQuantity()));
+        quantityLabel = new JLabel("Quantity: " + Integer.toString(product.getQuantity()));
         c.gridy += 1;
         mainFrame.add(quantityLabel,c);
         

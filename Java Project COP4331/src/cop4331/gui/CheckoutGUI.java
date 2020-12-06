@@ -17,6 +17,8 @@ public class CheckoutGUI extends MainFrameGUI{
     private JLabel priceLabel;
     private JLabel paymentTypeLabel;
     
+    private JLabel price;
+    
     private JTextField paymentTypeField;    
     
     private Cart cart = Login.getInstance().getCurrentUser().getCart();
@@ -53,47 +55,57 @@ public class CheckoutGUI extends MainFrameGUI{
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = 2;
-        c.anchor = SOUTH;
+        c.anchor = CENTER;
         mainFrame.add(checkoutLabel,c);
         
         //Price Label
-        priceLabel = new JLabel("Total Price: " + receipt.getTotal());
+        priceLabel = new JLabel("Total Price: ");
         c.gridy = 1;
-        c.anchor = SOUTH;
-        c.insets = new Insets(-SPACING,0,0,0);
+        c.gridwidth = 1;
+        c.anchor = NE;
         mainFrame.add(priceLabel,c);
+        
+        //Price
+        price = new JLabel("" + (double)(Math.round(receipt.getTotal()*100)/100));
+        c.gridy = 1;
+        c.gridx = 1;
+        c.anchor = NW;
+        mainFrame.add(price,c);
         
         //Payment Type Label
         paymentTypeLabel = new JLabel("Enter your payment type(Check,Cash,etc.): ");
         c.gridy = 2;
-        c.gridwidth = 1;
+        c.gridx = 0;
         c.anchor = NE;
-        c.insets = new Insets(0,0,-SPACING,0);
+        c.insets = new Insets(-SPACING*2,0,0,0); 
         mainFrame.add(paymentTypeLabel,c);
         
         //Payment Type Field
         paymentTypeField = new JTextField(17);
         c.gridx = 1;
+        c.gridx = 1;
         c.anchor = NW;
         mainFrame.add(paymentTypeField,c);
+                
+        //Pay Button
+        c.gridy += 1;
+        c.gridx = 0;
+        c.anchor = NORTH;
+        c.gridwidth = 2;
+        c.insets = new Insets(-SPACING*3,0,0,0); 
+        mainFrame.add(payButton,c);
         
         //Back Button
         c.gridy += 1;
         c.gridx = 0;
-        c.gridwidth = 1;
         c.anchor = SW;
         c.insets = new Insets(0,(int)(SPACING*1.5),(int)(SPACING*1.5),0);       
         mainFrame.add(backButton,c);
         
-        //Pay Button
-        c.anchor = SE;
-        c.gridx = 1;
-        c.insets = new Insets(0,0,(int)(SPACING*1.5),(int)(SPACING*1.5));
-        mainFrame.add(payButton,c);
-        
         checkoutLabel.setFont(fontBiggerBold);
-        priceLabel.setFont(font);
-        paymentTypeLabel.setFont(font);
+        priceLabel.setFont(fontBold);
+        price.setFont(font);
+        paymentTypeLabel.setFont(fontBold);
         paymentTypeField.setFont(font);
         
     }

@@ -10,7 +10,7 @@ public class Inventory implements java.io.Serializable{
     
     private int userID;
     private double revenue;
-    private double sales;
+    private double costs;
     private double profits;
     
     private ArrayList<Product> sellerList;
@@ -23,7 +23,7 @@ public class Inventory implements java.io.Serializable{
         this.userID = userID;
         this.sellerList = new ArrayList<Product>();
         this.revenue = 0;
-        this.sales = 0;
+        this.costs = 0;
         this.profits = 0;
     }
     /**
@@ -52,37 +52,39 @@ public class Inventory implements java.io.Serializable{
         }
         
     }
+
     /**
-     * Updates the Inventory by checking the quantity of Products that were bought from the Cart.
-     * Removes the Product from the Inventory if the quantity of Products becomes 0.
-     * @param cart The Cart of Products that will update the Inventory (if any Products are in common).
+     * Revenues = Sum of sell price for all sold items
+     * @param price 
      */
-    public void updateInventory(Cart cart){
-        ArrayList<Product> temp = cart.getProductList();
-        for(int i = 0;i < temp.size();i++){
-            if(this.sellerList.get(i).getItemID() == temp.get(i).getItemID()){
-                this.sellerList.get(i).setQuantity(this.sellerList.get(i).getQuantity() - temp.get(i).getQuantity());
-                
-                if(this.sellerList.get(i).getQuantity() == 0)
-                    this.removeProduct(this.sellerList.get(i));
-            }
-        }
+    public void addToRevenue(double price){
+        this.revenue += price;
+    }
+    /**
+     * Costs = Sum of invoice price for all items brought in the inventory (bought) 
+     * @param price
+     * @param original
+     */
+    public void addToCosts(double price, double original){
+        this.costs += ((price*0.02) + original);
+    }
+    /**
+     * Profit = Revenues - Costs 
+     */
+    public void calculateProfits(){
+        profits = revenue - costs;
     }
     
-    //Profit = Revenues - Costs,
-    //Revenues = Sum of sell price for all sold items
-    //Costs = Sum of invoice price for all items brought in the inventory (bought)
+    public double getRevenues(){
+        return revenue;
+    }
     
-//    public double calculateRevenue(double revenue){
-//        return 0;
-//    }
-//    
-//    public double calculateSales(double sales){
-//        return 0;
-//    }
-//    
-//    public double calculateProfits(double profits){
-//        return 0;
-//    }
+    public double getCosts(){
+        return costs;
+    }
+    
+    public double getProfits(){
+        return profits;
+    }
     
 }

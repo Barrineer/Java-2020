@@ -27,7 +27,7 @@ public class Receipt {
      * Calculates the total price of all Products in the Cart.
      */
     public void calculateTotal(){
-        int sum = 0;
+        double sum = 0;
         for(int i = 0; i < this.productList.getProductList().size();i++){
             sum += (this.productList.getProductList().get(i).getPrice() * this.productList.getProductList().get(i).getQuantity());
         }

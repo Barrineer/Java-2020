@@ -22,6 +22,7 @@ public class NewProductListener implements ActionListener{
         
         String name = ((NewProductGUI)frame).getName();
         String description = ((NewProductGUI)frame).getDescription();
+        String original = ((NewProductGUI)frame).getOriginalPrice();
         String price = ((NewProductGUI)frame).getPrice();
         String quantity = ((NewProductGUI)frame).getQuantity();
         String address = ((NewProductGUI)frame).getAddress();;
@@ -29,11 +30,11 @@ public class NewProductListener implements ActionListener{
         if(command.equals("Add")){
             
             try{
-            if(name == "" || description == "" || price == "" || quantity == "" || address == ""){
+            if(name == "" || description == "" || price == "" || quantity == "" || address == "" || original == ""){
                 ((NewProductGUI)frame).setDetailLabel("Please enter at least a single value into each category.");
             }
             else{
-                Product product = new Product(name,description,Double.parseDouble(price),Integer.parseInt(quantity),user.getUserID(),address);
+                Product product = new Product(name,description,Double.parseDouble(price),Double.parseDouble(original),Integer.parseInt(quantity),user.getUserID(),address);
                 user.getInventory().addProduct(product);
                 ((NewProductGUI)frame).setDetailLabel("New product created successfully!");
                 Login.getInstance().createSerialization();

@@ -125,7 +125,7 @@ public class ShoppingGUI extends MainFrameGUI{
     }
     
     public Product getProduct(String productID){
-        Product product = new Product("none","none",0,0,0,"none");
+        Product product = new Product("none","none",0,0,0,0,"none");
         for(int i = 0;i < products.size();i++){
             if(Integer.parseInt(productID) == products.get(i).getItemID()){
                 product = products.get(i);
