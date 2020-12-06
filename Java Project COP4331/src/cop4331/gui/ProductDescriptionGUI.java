@@ -140,8 +140,6 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         priceLabel.setFont(fontBold);
         quantityLabel.setFont(fontBold);
         addressLabel.setFont(fontBold);
-        quantitySelectionLabel.setFont(fontBold);
-        quantitySelectionField.setFont(font);
         
     }
     

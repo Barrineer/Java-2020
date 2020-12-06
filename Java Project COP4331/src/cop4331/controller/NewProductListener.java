@@ -30,6 +30,7 @@ public class NewProductListener implements ActionListener{
         
         if(command.equals("Add")){
             
+            try{
             if(name == "" || description == "" || price == "" || quantity == "" || address == ""){
                 ((NewProductGUI)frame).setDetailLabel("Please enter at least a single value into each category.");
             }
@@ -38,6 +39,10 @@ public class NewProductListener implements ActionListener{
                 user.getInventory().addProduct(product);
                 ((NewProductGUI)frame).setDetailLabel("New product created successfully!");
                 Login.getInstance().createSerialization();
+            }
+            }
+            catch(NumberFormatException x){
+                ((NewProductGUI)frame).setDetailLabel("Please enter a numerical value into both the price and quantity fields.");
             }
             
         }
