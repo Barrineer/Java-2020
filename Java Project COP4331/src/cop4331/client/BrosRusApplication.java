@@ -87,23 +87,42 @@ public class BrosRusApplication {
         Login.getInstance().removeAllData();
     }
     
+    public static void printAccountDetails(){
+        System.out.println("User 1: bill, Pass: bill");
+        System.out.println("User 2: bob, Pass: bob");
+        System.out.println("User 3: sam, Pass: sam");
+    }
+    
     public static void main(String args[]){
         
         //True for premade data, false if new user or keeping old data
         boolean test = true;
+        
+        ArrayList<User> users = Login.getInstance().getUsers();
         
         if(test){
             clearData();
             createUsers();
             createProducts();
             setItemIDCounter();
-            CurrentGUI.getInstance().callGUI();
+            printAccountDetails();
         }
         else{
+            boolean testData = true;
+            
+            for(int i = 0;i < users.size();i++){
+                String password = users.get(i).getPassword();
+                if(password.equals("bill") || password.equals("bob") || password.equals("sam"))
+                    testData = false;
+            }
+            if(!testData){
+                clearData();
+            }
             Login.getInstance().loadSerialization();
             setItemIDCounter();
         }
         
+        CurrentGUI.getInstance().callGUI();
         
     }
     
