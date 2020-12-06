@@ -22,6 +22,9 @@ public class CheckoutGUI extends MainFrameGUI{
     private Cart cart = Login.getInstance().getCurrentUser().getCart();
     private Receipt receipt = new Receipt(cart,Login.getInstance().getCurrentUser().getUserID(),"");
     
+    /**
+     * Creates the button events for the Checkout GUI
+     */
     public void createButtonEvents(){
         
         payButton = new JButton("Pay");
@@ -36,7 +39,9 @@ public class CheckoutGUI extends MainFrameGUI{
         payButton.setFont(font);
         backButton.setFont(font);
     }
-    
+    /**
+     * Creates the Checkout GUI
+     */
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
@@ -92,7 +97,10 @@ public class CheckoutGUI extends MainFrameGUI{
         paymentTypeField.setFont(font);
         
     }
-    
+    /**
+     * Getter for the receipt
+     * @return receipt
+     */
     public Receipt getReceipt(){
         receipt.setPaymentType(paymentTypeField.getText());
         return receipt;

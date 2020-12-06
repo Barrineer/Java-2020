@@ -1,15 +1,13 @@
 package cop4331.gui;
 import cop4331.model.*;
 import cop4331.controller.CartListener;
-import cop4331.controller.InventoryListener;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
 
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class CartGUI extends MainFrameGUI{
     
@@ -31,6 +29,9 @@ public class CartGUI extends MainFrameGUI{
     private Cart cart = user.getCart();
     private ArrayList<Product> products = cart.getProductList();    
     
+    /**
+     * Creates button events for the Cart GUI
+     */
     public void createButtonEvents(){
         backButton = new JButton("Back");
         checkoutButton = new JButton("Checkout");
@@ -44,7 +45,9 @@ public class CartGUI extends MainFrameGUI{
         backButton.setFont(font);
         checkoutButton.setFont(font);
     }
-    
+    /**
+     * Creates the Cart GUI
+     */
     public void createGUI(){
         setPageCounter();
         setTotalPages();
@@ -118,18 +121,28 @@ public class CartGUI extends MainFrameGUI{
         cartLabel.setFont(fontBiggerBold);
         pageLabel.setFont(fontBold);
     }
-    
+    /**
+     * Creates a product button
+     * @param productName 
+     */
     public void createProductButton(String productName){
         productButton = new JButton(productName);
         productButton.setActionCommand(productName);
         productButton.addActionListener(new CartListener());
         productButton.setFont(font);
     }
-    
+    /**
+     * Adds product button to the main frame
+     * @param c 
+     */
     public void addProductButton(GridBagConstraints c){
         mainFrame.add(productButton,c);
     }
-    
+    /**
+     * Getter for products
+     * @param productID
+     * @return product
+     */
     public Product getProduct(String productID){
         Product product = new Product("none","none",0,0,0,"none");
         for(int i = 0;i < products.size();i++){
@@ -139,7 +152,10 @@ public class CartGUI extends MainFrameGUI{
         }
         return product;
     }
-    
+    /**
+     * Creates the "Remove 1" and "Remove All" button
+     * @param productID 
+     */
     public void createRemoveButtons(String productID){
         removeOneButton = new JButton("Remove 1");
         removeAllButton = new JButton("Remove All");
@@ -153,34 +169,53 @@ public class CartGUI extends MainFrameGUI{
         removeOneButton.setFont(font);
         removeAllButton.setFont(font);
     }
-    
+    /**
+     * Add "Remove All" button
+     * @param c 
+     */
     public void addRemoveAllButton(GridBagConstraints c){
         mainFrame.add(removeAllButton,c);
     }
-    
+    /**
+     * Add "Remove 1" button
+     * @param c 
+     */
     public void addRemoveOneButton(GridBagConstraints c){
         mainFrame.add(removeOneButton,c);
     }
-    
+    /**
+     * Creates the page buttons
+     * @param number 
+     */
     public void createPageButton(String number){
         nextPageButton = new JButton(number);
         nextPageButton.setActionCommand(number);
         nextPageButton.addActionListener(new CartListener());
         nextPageButton.setFont(font);
     }
-    
+    /**
+     * Adds the page buttons
+     * @param c 
+     */
     public void addPageButton(GridBagConstraints c){
         mainFrame.add(nextPageButton,c);
     }
-    
+    /**
+     * Setter for the page counter
+     */
     private void setPageCounter(){
         pageCounter = (Login.getInstance().getCurrentUser().getCart().getProductList().size() - itemAmount)/15 + 1;
     }
-    
+    /**
+     * Getter for the page counter
+     * @return page counter
+     */
     public int getPageNumber(){
         return pageCounter;
     }
-    
+    /**
+     * Sets total pages
+     */
     private void setTotalPages(){
         if(Login.getInstance().getCurrentUser().getCart().getProductList().size() % 15 == 0){
             totalPages = Login.getInstance().getCurrentUser().getCart().getProductList().size()/15;
@@ -189,7 +224,10 @@ public class CartGUI extends MainFrameGUI{
             totalPages = Login.getInstance().getCurrentUser().getCart().getProductList().size()/15 + 1;
         }
     }
-    
+    /**
+     * Sets the total item amount
+     * @param number 
+     */
     public void setItemAmount(int number){
         itemAmount = number;
     }

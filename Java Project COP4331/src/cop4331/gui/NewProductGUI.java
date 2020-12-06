@@ -1,11 +1,7 @@
 package cop4331.gui;
-import cop4331.model.*;
-import cop4331.controller.InventoryListener;
 import cop4331.controller.NewProductListener;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 /**
  *
  * @author mikey
@@ -29,6 +25,9 @@ public class NewProductGUI extends MainFrameGUI{
     private JButton addButton;
     private JButton backButton;
     
+    /**
+     * Creates button events for New Product GUI
+     */
     public void createButtonEvents(){
         
         addButton = new JButton("Add");
@@ -44,7 +43,9 @@ public class NewProductGUI extends MainFrameGUI{
         backButton.setFont(font);
         
     }
-            
+    /**
+     * Creates New Product GUI
+     */
     public void createGUI(){
         createNewFrame("BrosRus Application",1000,1000);
         GridBagConstraints c = new GridBagConstraints();
@@ -168,27 +169,45 @@ public class NewProductGUI extends MainFrameGUI{
         quantityField.setFont(font);
         addressField.setFont(font);
     }            
-    
+    /**
+     * Getter for product name field 
+     * @return string for name text field
+     */
     public String getName(){
         return nameField.getText();
     }
-    
+    /**
+     * Getter for product description field
+     * @return string for description field
+     */
     public String getDescription(){
         return descriptionField.getText();
     }
-    
+    /**
+     * Getter for product price field
+     * @return string for price field
+     */
     public String getPrice(){
         return priceField.getText();
     }
-    
+    /**
+     * Getter for product quantity field
+     * @return string for quantity field
+     */
     public String getQuantity(){
         return quantityField.getText();
     }
-    
+    /**
+     * Getter for product address field
+     * @return string for address field
+     */
     public String getAddress(){
         return addressField.getText();
     }
-    
+    /**
+     * Setter for detail label
+     * @param text string to set
+     */
     public void setDetailLabel(String text){
         detailLabel.setText(text);
     }

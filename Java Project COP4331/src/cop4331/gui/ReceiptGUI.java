@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.*;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class ReceiptGUI extends MainFrameGUI{
     
@@ -23,7 +23,9 @@ public class ReceiptGUI extends MainFrameGUI{
     public ReceiptGUI(Receipt receipt){
         this.receipt = receipt;
     }
-    
+    /**
+     * Creates the button events for the Receipt GUI
+     */
     public void createButtonEvents(){
     
         returnButton = new JButton("Return");
@@ -34,7 +36,9 @@ public class ReceiptGUI extends MainFrameGUI{
         
         returnButton.setFont(font);    
     }
-    
+    /**
+     * Creates GUI for Receipt GUI
+     */
     public void createGUI(){
     
         GridBagConstraints c = new GridBagConstraints();

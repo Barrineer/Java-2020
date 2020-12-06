@@ -1,9 +1,7 @@
 package cop4331.controller;
-import cop4331.gui.AccountInfoGUI;
 import cop4331.gui.InventoryGUI;
 import cop4331.gui.MainFrameGUI;
 import cop4331.gui.NewProductGUI;
-import cop4331.gui.ShoppingGUI;
 import cop4331.model.Login;
 import cop4331.model.Product;
 import cop4331.model.User;
@@ -11,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class NewProductListener implements ActionListener{
 

@@ -6,12 +6,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class LoginListener implements ActionListener{
 
     private String accountType = "";
     
+    /**
+     * Overrides ActionListener
+     * @param e 
+     */
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
         MainFrameGUI gui = CurrentGUI.getInstance().getFrame();
@@ -91,7 +95,10 @@ public class LoginListener implements ActionListener{
             }
         }
     }
-    
+    /**
+     * Getter for account type
+     * @return account type
+     */
     public String getAccountType(){
         return this.accountType;
     }

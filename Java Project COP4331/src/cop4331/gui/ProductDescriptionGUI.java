@@ -9,7 +9,7 @@ import java.util.*;
 
 /**
  *
- * @author mikey, malcolm
+ * @author mikey, malcolm, Joseph
  */
 public class ProductDescriptionGUI extends MainFrameGUI{
     
@@ -35,7 +35,9 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         this.product = product;
     }
     
-    
+    /**
+     * Creates button events for the product description GUI
+     */
     public void createButtonEvents(){
     
         backButton = new JButton("Back");
@@ -55,7 +57,9 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         removeButton.setFont(font);
         
     }
-    
+    /**
+     * Creates Product Description GUI
+     */
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
@@ -142,15 +146,24 @@ public class ProductDescriptionGUI extends MainFrameGUI{
         addressLabel.setFont(fontBold);
         
     }
-    
+    /**
+     * Getter for product
+     * @return product
+     */
     public Product getProduct(){
         return product;
     }
-    
+    /**
+     * Getter for product quantity field
+     * @return quantity
+     */
     public int getQuantity(){
         return Integer.parseInt(quantitySelectionField.getText());
     }
-    
+    /**
+     * Setter for product quantity selection label
+     * @param text 
+     */
     public void setQuantityLabel(String text){
         quantitySelectionLabel.setText(text);
     }

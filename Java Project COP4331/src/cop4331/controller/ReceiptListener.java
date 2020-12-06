@@ -1,12 +1,11 @@
 package cop4331.controller;
 import cop4331.gui.MainFrameGUI;
 import cop4331.gui.ShoppingGUI;
-import cop4331.model.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class ReceiptListener implements ActionListener{
 

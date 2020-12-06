@@ -18,6 +18,14 @@ public class User implements java.io.Serializable{
     private Cart cart;
     private Inventory inventory;
     
+    /**
+     * Constructor for User Class.
+     * @param accountType
+     * @param userName
+     * @param password
+     * @param address
+     * @param age 
+     */
     public User(String accountType, String userName, String password, String address, Date age){
         this.accountType = accountType;
         this.userName = userName;
@@ -28,6 +36,12 @@ public class User implements java.io.Serializable{
         this.cart = new Cart(userID);
         this.inventory = new Inventory(userID);
     }
+    /**
+     * Constructor for User Class.
+     * @param accountType
+     * @param userName
+     * @param password 
+     */
     public User(String accountType, String userName, String password){
         this.accountType = accountType;
         this.userName = userName;
@@ -38,14 +52,21 @@ public class User implements java.io.Serializable{
         this.cart = new Cart(userID);
         this.inventory = new Inventory(userID);
     }
-    
+    /**
+     * Tests if user is the same as the other user
+     * @param user
+     * @return true if this.user == user
+     */
     public boolean equals(User user){
         if(this.userID == user.userID){
             return true;
         }
         return false;
     }
-    
+    /**
+     * Creates a new user ID
+     * @return userIDCounter
+     */
     private int createNewID(){
         userIDCounter += 1;
         return userIDCounter;
@@ -129,11 +150,17 @@ public class User implements java.io.Serializable{
     public void setDate(Date age){
         this.age = (Date) age.clone();
     }
-    
+    /**
+     * Getter for users cart
+     * @return this.cart
+     */
     public Cart getCart(){
         return this.cart;
     }
-    
+    /**
+     * Getter for users inventory
+     * @return this.inventory
+     */
     public Inventory getInventory(){
         return this.inventory;
     }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class ShoppingGUI extends MainFrameGUI{
         
@@ -23,6 +23,9 @@ public class ShoppingGUI extends MainFrameGUI{
     private int pageCounter = 1;
     private int totalPages = 1;
     
+    /**
+     * Creates the button events for Buyer GUI
+     */
     public void createButtonEvents(){
         switchButton = new JButton("Switch to seller");
         accountButton = new JButton(Login.getInstance().getCurrentUser().getUserName());
@@ -40,7 +43,9 @@ public class ShoppingGUI extends MainFrameGUI{
         accountButton.setFont(font);
         cartButton.setFont(font);
     }
-    
+    /**
+     * Creates Buyer GUI
+     */
     public void createGUI(){
         setPageCounter();
         setTotalPages();
@@ -104,7 +109,10 @@ public class ShoppingGUI extends MainFrameGUI{
         shoppingLabel.setFont(font);        
         
     }
-    
+    /**
+     * 
+     * @param productName 
+     */
     public void createProductButton(String productName){
         productButton = new JButton(productName);
         productButton.setActionCommand(productName);
@@ -136,15 +144,23 @@ public class ShoppingGUI extends MainFrameGUI{
     public void addPageButton(GridBagConstraints c){
         mainFrame.add(nextPageButton,c);
     }
-    
+    /**
+     * Keeps track of the page counter 
+     */
     private void setPageCounter(){
         pageCounter = (countAllProducts() - itemAmount)/15 + 1;
     }
-    
+    /**
+     * Getter for the page number
+     * @return pageCounter
+     */
     public int getPageNumber(){
         return pageCounter;
     }
-    
+    /**
+     * Setter for the amount of pages needed
+     * If more than 15 products, put them on the next page
+     */
     private void setTotalPages(){
         if(countAllProducts() % 15 == 0){
             totalPages = countAllProducts()/15;
@@ -153,11 +169,17 @@ public class ShoppingGUI extends MainFrameGUI{
             totalPages = countAllProducts()/15 + 1;
         }
     }
-    
+    /**
+     * Setter for the item amount
+     * @param number 
+     */
     public void setItemAmount(int number){
         itemAmount = number;
     }
-    
+    /**
+     * Gets all products from every users inventory
+     * @return allProducts
+     */
     private ArrayList<Product> getAllProducts(){
         ArrayList<User> users = Login.getInstance().getUsers();
         ArrayList<Product> allProducts = new ArrayList<>();
@@ -170,7 +192,10 @@ public class ShoppingGUI extends MainFrameGUI{
         }
         return allProducts;
     }
-    
+    /**
+     * Counter for all products
+     * @return number of total products for every users inventory
+     */
     public int countAllProducts(){
         int number = 0;
         ArrayList<User> users = Login.getInstance().getUsers();

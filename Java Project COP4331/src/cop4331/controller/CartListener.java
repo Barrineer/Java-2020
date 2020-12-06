@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class CartListener implements ActionListener{
     

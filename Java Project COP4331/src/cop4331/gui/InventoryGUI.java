@@ -2,12 +2,11 @@ package cop4331.gui;
 import cop4331.model.*;
 import cop4331.controller.InventoryListener;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class InventoryGUI extends MainFrameGUI{
     
@@ -26,6 +25,9 @@ public class InventoryGUI extends MainFrameGUI{
     private Inventory inventory = user.getInventory();
     private ArrayList<Product> products = inventory.getInventory();
     
+    /**
+     * Creates the button events for the seller GUI
+     */
     public void createButtonEvents(){
         switchButton = new JButton("Switch to buyer");
         accountButton = new JButton(Login.getInstance().getCurrentUser().getUserName());
@@ -43,7 +45,9 @@ public class InventoryGUI extends MainFrameGUI{
         accountButton.setFont(font);
         newProductButton.setFont(font);
     }
-    
+    /**
+     * Creates seller GUI
+     */
     public void createGUI(){
         setPageCounter();
         setTotalPages();
@@ -101,18 +105,28 @@ public class InventoryGUI extends MainFrameGUI{
         pageLabel.setFont(font);
         
     }
-    
+    /**
+     * Creates a new product button
+     * @param productName 
+     */
     public void createProductButton(String productName){
         productButton = new JButton(productName);
         productButton.setActionCommand(productName);
         productButton.addActionListener(new InventoryListener());
         productButton.setFont(font);
     }
-    
+    /**
+     * Adds the product button to the main frame
+     * @param c 
+     */
     public void addProductButton(GridBagConstraints c){
         mainFrame.add(productButton,c);
     }
-    
+    /**
+     * Getter for products based on item ID
+     * @param productID
+     * @return product
+     */
     public Product getProduct(String productID){
         Product product = new Product("none","none",0,0,0,"none");
         for(int i = 0;i < products.size();i++){
@@ -122,26 +136,39 @@ public class InventoryGUI extends MainFrameGUI{
         }
         return product;
     }
-    
+    /**
+     * Creates a page button
+     * @param number 
+     */
     public void createPageButton(String number){
         nextPageButton = new JButton(number);
         nextPageButton.setActionCommand(number);
         nextPageButton.addActionListener(new InventoryListener());
         nextPageButton.setFont(font);
     }
-    
+    /**
+     * Add the page button based on GridBagContraints
+     * @param c 
+     */
     public void addPageButton(GridBagConstraints c){
-        mainFrame.add(nextPageButton,c);
+        mainFrame.add(nextPageButton, c);
     }
-    
+    /**
+     * Sets page counter
+     */
     private void setPageCounter(){
         pageCounter = (Login.getInstance().getCurrentUser().getInventory().getInventory().size() - itemAmount)/15 + 1;
     }
-    
+    /**
+     * Getter for page number
+     * @return pageCounter
+     */
     public int getPageNumber(){
         return pageCounter;
     }
-    
+    /**
+     * Setter for total pages
+     */
     private void setTotalPages(){
         if(Login.getInstance().getCurrentUser().getInventory().getInventory().size() % 15 == 0){
             totalPages = Login.getInstance().getCurrentUser().getInventory().getInventory().size()/15;
@@ -150,9 +177,11 @@ public class InventoryGUI extends MainFrameGUI{
             totalPages = Login.getInstance().getCurrentUser().getInventory().getInventory().size()/15 + 1;
         }
     }
-    
+    /**
+     * Setter for item amount
+     * @param number 
+     */
     public void setItemAmount(int number){
         itemAmount = number;
-    }
-    
+    }  
 }

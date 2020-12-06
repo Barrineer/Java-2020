@@ -4,7 +4,7 @@ package cop4331.model;
  * Product class for the BrosRUs Application.
  * Stores the name, description, item ID, price, quantity, seller ID, and address of a Product.
  * Includes a uniqueID creator and getter/setter functions for most attributes.
- * @author mikey
+ * @author mikey, Joseph
  */
 public class Product implements java.io.Serializable{
     

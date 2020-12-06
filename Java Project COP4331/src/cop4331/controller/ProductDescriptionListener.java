@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class ProductDescriptionListener implements ActionListener{
     

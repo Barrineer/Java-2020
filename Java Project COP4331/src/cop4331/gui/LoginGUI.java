@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * The Login GUI for the BrosRus Application.
- * @author mikey, malcolm
+ * @author mikey, malcolm, Joseph
  */
 public class LoginGUI extends MainFrameGUI{
 
@@ -30,6 +30,9 @@ public class LoginGUI extends MainFrameGUI{
     
     private LoginListener command = new LoginListener();
     
+    /**
+     * Creates a GUI for Login
+     */
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("Welcome to BrosRus!",500,500);
@@ -62,7 +65,9 @@ public class LoginGUI extends MainFrameGUI{
         buyerButton.setFont(font);
         sellerButton.setFont(font);
     }
-    
+    /**
+     * Creates button events for the Login GUI
+     */
     public void createButtonEvents(){
         newUserButton = new JButton("Sign Up");
         buyerButton = new JButton("Buyer");
@@ -82,7 +87,9 @@ public class LoginGUI extends MainFrameGUI{
         backButton.addActionListener(command);
         submitButton.addActionListener(command);
     }
-    
+    /**
+     * GUI for creating a new user
+     */
     public void newUserGUI(){
         GridBagConstraints c = new GridBagConstraints();
         loginLabel.setText("Create a new account");
@@ -157,7 +164,9 @@ public class LoginGUI extends MainFrameGUI{
         
         mainFrame.repaint();
     }
-    
+    /**
+     * Creates the buyer/seller different GUIs
+     */
     public void changeLoginGUI(){
         GridBagConstraints c = new GridBagConstraints();
         loginLabel.setText("Signing in as a " + command.getAccountType());
@@ -223,7 +232,9 @@ public class LoginGUI extends MainFrameGUI{
         
         mainFrame.repaint();
     }
-    
+    /**
+     * GUI for back button event
+     */
     public void goBackGUI(){
         GridBagConstraints c = new GridBagConstraints();
         loginLabel.setText("Sign in as a Buyer or Seller?");
@@ -255,19 +266,31 @@ public class LoginGUI extends MainFrameGUI{
         mainFrame.repaint();
         
     }
-    
+    /**
+     * Getter for userNameField
+     * @return string of username
+     */
     public String getUserName(){
         return this.userNameField.getText();
     }
-    
+    /**
+     * Getter for passwordField
+     * @return string of password
+     */
     public String getPassword(){
         return this.passwordField.getText();
     }
-    
+    /**
+     * Getter for confirmPasswordField
+     * @return string of confirmed password 
+     */
     public String getConfirmPassword(){
         return this.confirmPasswordField.getText();
     }
-    
+    /**
+     * sets text for the Login Label
+     * @param newText 
+     */
     public void setLoginLabel(String newText){
         loginLabel.setText(newText);
     }

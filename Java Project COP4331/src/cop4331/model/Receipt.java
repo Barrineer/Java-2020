@@ -11,6 +11,12 @@ public class Receipt {
     private double total;
     private String paymentType;
     
+    /**
+     * Constructor for the Receipt Class
+     * @param productList
+     * @param checkoutID
+     * @param paymentType 
+     */
     public Receipt(Cart productList, int checkoutID, String paymentType){
         this.productList = (Cart) productList.clone();
         this.checkoutID = checkoutID;
@@ -27,19 +33,31 @@ public class Receipt {
         }
         total = sum;
     }
-    
+    /**
+     * Setter for paymentType.
+     * @param paymentType 
+     */
     public void setPaymentType(String paymentType){
         this.paymentType = paymentType;
     }
-    
+    /**
+     * Getter for Checkout ID.
+     * @return checkoutID
+     */
     public int getCheckoutID(){
         return checkoutID;
     }
-    
+    /**
+     * Getter for paymentType.
+     * @return paymentType
+     */
     public String getPaymentType(){
         return paymentType;
     }
-    
+    /**
+     * Getter for calculated total.
+     * @return total
+     */
     public double getTotal(){
         calculateTotal();
         return total;

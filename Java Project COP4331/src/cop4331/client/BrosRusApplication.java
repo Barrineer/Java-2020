@@ -7,9 +7,14 @@ import cop4331.model.*;
  *
  * @author mikey, Joseph Mucciaccio
  */
+
+
 public class BrosRusApplication {
     
-    //Various Products that will be used as examples:
+    /**
+     * Creating Various Products that will be used as examples
+     * Testing Purposes
+     */
     public static void createProducts(){
         ArrayList<User> users = Login.getInstance().getUsers();
         User bill = users.get(0);   
@@ -58,7 +63,10 @@ public class BrosRusApplication {
             samInventory.add(sixteen);
 
             Login.getInstance().createSerialization();
-    }    
+    }
+    /**
+     * Makes Users for Testing
+     */
     public static void createUsers(){
         
         User one = new User("","bill","bill");
@@ -69,7 +77,10 @@ public class BrosRusApplication {
         Login.getInstance().addUser(two);
         Login.getInstance().addUser(three);
     }
-    
+    /**
+     * Reset Item Counter for Testing
+     * When adding products, this increments to start after test products are added
+     */
     public static void setItemIDCounter(){
         ArrayList<User> users = Login.getInstance().getUsers();
         Product dummy = new Product("","",0,0,0,"");
@@ -82,17 +93,21 @@ public class BrosRusApplication {
             }
         }
     }
-    
+    /**
+     * Clears Test Data
+     */
     public static void clearData(){
         Login.getInstance().removeAllData();
     }
-    
+    /**
+     * Printing account details for Testing
+     */
     public static void printAccountDetails(){
         System.out.println("User 1: bill, Pass: bill");
         System.out.println("User 2: bob, Pass: bob");
         System.out.println("User 3: sam, Pass: sam");
     }
-    
+
     public static void main(String args[]){
         
         //True for premade data, false if new user or keeping old data
@@ -110,6 +125,7 @@ public class BrosRusApplication {
         else{
             boolean testData = true;
             
+            // if any password is any of the three below, clear data
             for(int i = 0;i < users.size();i++){
                 String password = users.get(i).getPassword();
                 if(password.equals("bill") || password.equals("bob") || password.equals("sam"))

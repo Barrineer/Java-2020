@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph
  */
 public class CheckoutListener implements ActionListener{
 

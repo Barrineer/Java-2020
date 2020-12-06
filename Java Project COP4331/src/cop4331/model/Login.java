@@ -5,7 +5,7 @@ import java.util.*;
  * Adds a new User to a single instance of Login.
  * Uses Singleton pattern.
  * Also checks if the username and password combination matches the one in Login records.
- * @author mikey
+ * @author mikey, Joseph
  */
 public class Login {
     
@@ -30,18 +30,30 @@ public class Login {
     public void addUser(User user){
         users.add(user);
     }
+    /**
+     * returns an ArrayList of users.
+     * @return users
+     */
     public ArrayList<User> getUsers(){
         return users;
     }
-    
+    /**
+     * Setter for the current user.
+     * @param user 
+     */
     public void setCurrentUser(User user){
         currentUser = user;
     }
-    
+    /**
+     * Getter for the current user.
+     * @return currentUser
+     */
     public User getCurrentUser(){
         return currentUser;
     }
-    
+    /**
+     * Creates Serialization.
+     */
     public void createSerialization(){
         try{
             FileOutputStream fileOut = new FileOutputStream("login.ser");
@@ -55,6 +67,9 @@ public class Login {
             System.out.println("I Error.");
         }
     }
+    /**
+     * Loads Serialization.
+     */
     public void loadSerialization(){
         try{
             FileInputStream fileIn = new FileInputStream("login.ser");
@@ -71,6 +86,9 @@ public class Login {
            System.out.println("Class Error.");
         }
     }
+    /**
+     * Removes all Serialization data.
+     */
     public void removeAllData(){
         try{
             FileOutputStream fileOut = new FileOutputStream("login.ser");

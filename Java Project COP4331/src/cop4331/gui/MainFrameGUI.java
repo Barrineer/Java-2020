@@ -52,7 +52,13 @@ public class MainFrameGUI {
     
     protected static final int SPACING = 60;
 
-    
+    /**
+     * Creates a new frame
+     * 
+     * @param str frames name
+     * @param width sets frame width
+     * @param height sets frame height
+     */
     public void createNewFrame(String str,int width,int height){
         mainFrame = new JFrame(str);
         mainFrame.setSize(width,height);
@@ -60,7 +66,9 @@ public class MainFrameGUI {
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setVisible(true);
     }
-    
+    /**
+     * Creates the top panel and contains the switch user button and profile button
+     */
     public void createTopPanel(){
         GridBagConstraints c = new GridBagConstraints();
         
@@ -81,12 +89,19 @@ public class MainFrameGUI {
         mainFrame.add(accountButton,c);
         
     }
-    
+    /**
+     * Takes away previous frame
+     */
     public void removeOldFrame(){
         mainFrame.dispose();
     }
-    
+    /**
+     * Creates buttons events based on the subclass
+     */
     public void createButtonEvents(){}
+    /**
+     * Creates GUI based on the subclass
+     */
     public void createGUI(){}
     
 }

@@ -27,6 +27,9 @@ public class AccountInfoGUI extends MainFrameGUI{
     private JButton backButton;
     private JButton submitButton;
     
+    /**
+     * Creates button events for Account Info GUI
+     */
     public void createButtonEvents(){
         
         backButton = new JButton("Back");
@@ -38,7 +41,9 @@ public class AccountInfoGUI extends MainFrameGUI{
         backButton.addActionListener(new AccountInfoListener());
         submitButton.addActionListener(new AccountInfoListener());
     }
-    
+    /**
+     * Creates Account Info GUI
+     */
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
@@ -180,23 +185,38 @@ public class AccountInfoGUI extends MainFrameGUI{
         backButton.setFont(font);
         submitButton.setFont(font);
     }
-    
+    /**
+     * Getter for username text field
+     * @return string for username field
+     */
     public String getUserName(){
         return userNameField.getText();
     }
-    
+    /**
+     * Getter for password text field
+     * @return string for password field
+     */
     public String getPassword(){
         return passwordField.getText();
     }
-    
+    /**
+     * Getter for address text field
+     * @return string for address field
+     */
     public String getAddress(){
         return addressField.getText();
     }
-    
+    /**
+     * Getter for age text field
+     * @return string for age field
+     */
     public String getAge(){
         return ageField.getText();
     }
-    
+    /**
+     * Setter for the submit detail label
+     * @param text string for submit detail label
+     */
     public void setSubmitDetailLabel(String text){
         submitDetailLabel.setText(text);
     }

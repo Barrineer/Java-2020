@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  *
- * @author Joseph
+ * @author Joseph, mikey
  */
 public class Inventory implements java.io.Serializable{
     
@@ -15,6 +15,10 @@ public class Inventory implements java.io.Serializable{
     
     private ArrayList<Product> sellerList;
     
+    /**
+     * Constructor for Inventory Class
+     * @param userID 
+     */
     public Inventory(int userID){
         this.userID = userID;
         this.sellerList = new ArrayList<Product>();
@@ -22,15 +26,24 @@ public class Inventory implements java.io.Serializable{
         this.sales = 0;
         this.profits = 0;
     }
-    
+    /**
+     * Getter for the sellers inventory
+     * @return 
+     */
     public ArrayList<Product> getInventory(){
         return sellerList;
     }
-    
+    /**
+     * Adds product to sellers inventory
+     * @param product 
+     */
     public void addProduct(Product product){
         sellerList.add((Product) product.clone());
     }
-    
+    /**
+     * Removes product from sellers inventory
+     * @param product 
+     */
     public void removeProduct(Product product){
         
         for(int i = 0;i < sellerList.size();i++){
@@ -56,16 +69,20 @@ public class Inventory implements java.io.Serializable{
         }
     }
     
-    public double calculateRevenue(double revenue){
-        return 0;
-    }
+    //Profit = Revenues - Costs,
+    //Revenues = Sum of sell price for all sold items
+    //Costs = Sum of invoice price for all items brought in the inventory (bought)
     
-    public double calculateSales(double sales){
-        return 0;
-    }
-    
-    public double calculateProfits(double profits){
-        return 0;
-    }
+//    public double calculateRevenue(double revenue){
+//        return 0;
+//    }
+//    
+//    public double calculateSales(double sales){
+//        return 0;
+//    }
+//    
+//    public double calculateProfits(double profits){
+//        return 0;
+//    }
     
 }
