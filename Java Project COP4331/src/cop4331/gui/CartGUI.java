@@ -7,7 +7,7 @@ import javax.swing.*;
 
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class CartGUI extends MainFrameGUI{
     

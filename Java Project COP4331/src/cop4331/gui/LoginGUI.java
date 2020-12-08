@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  * The Login GUI for the BrosRus Application.
- * @author mikey, malcolm, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class LoginGUI extends MainFrameGUI{
 

@@ -5,7 +5,7 @@ import cop4331.controller.*;
 import cop4331.model.*;
 /**
  *
- * @author mikey, Joseph Mucciaccio
+ * @author mikey, Joseph Mucciaccio, Malcolm Richardson
  */
 
 

@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class CheckoutGUI extends MainFrameGUI{
     

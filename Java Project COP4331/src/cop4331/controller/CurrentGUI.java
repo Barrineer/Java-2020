@@ -3,7 +3,7 @@ import cop4331.gui.*;
 /**
  * Controls which GUI is currently being displayed.
  * Uses Singleton Pattern.
- * @author mikey
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class CurrentGUI {
 

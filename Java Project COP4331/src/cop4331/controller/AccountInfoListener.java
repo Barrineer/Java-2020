@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.util.*;
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class AccountInfoListener implements ActionListener{
     

@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class NewProductListener implements ActionListener{
 

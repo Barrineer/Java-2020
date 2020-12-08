@@ -5,7 +5,7 @@ import java.util.*;
  * Adds a new User to a single instance of Login.
  * Uses Singleton pattern.
  * Also checks if the username and password combination matches the one in Login records.
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class Login {
     

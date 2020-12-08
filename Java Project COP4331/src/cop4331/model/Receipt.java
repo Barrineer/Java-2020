@@ -2,7 +2,7 @@ package cop4331.model;
 
 /**
  * Holds information about the user's ID, the checkout ID, the total price, and the payment type.
- * @author mikey
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class Receipt {
     

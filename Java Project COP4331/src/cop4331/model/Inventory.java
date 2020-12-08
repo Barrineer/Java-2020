@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  *
- * @author Joseph, mikey
+ * @author Joseph, mikey, Malcolm Richardson
  */
 public class Inventory implements java.io.Serializable{
     

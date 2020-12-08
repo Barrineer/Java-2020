@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class ShoppingGUI extends MainFrameGUI{
         

@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class InventoryListener implements ActionListener{
 

@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.*;
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class ReceiptGUI extends MainFrameGUI{
     

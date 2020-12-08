@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 /**
  *
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class CheckoutListener implements ActionListener{
 

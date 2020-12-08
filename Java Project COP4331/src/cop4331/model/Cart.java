@@ -3,7 +3,7 @@ import java.util.*;
 /**
  * Cart class for the BrosRus application.
  * Stores the user's ID, an array list of Products, and the total number of Products in the Cart.
- * @author mikey, Joseph
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class Cart implements java.io.Serializable{
     

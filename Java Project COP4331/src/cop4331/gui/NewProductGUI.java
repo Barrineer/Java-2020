@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 /**
  *
- * @author mikey
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class NewProductGUI extends MainFrameGUI{
     

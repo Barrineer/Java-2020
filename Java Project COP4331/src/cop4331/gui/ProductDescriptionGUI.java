@@ -9,7 +9,7 @@ import java.util.*;
 
 /**
  *
- * @author mikey, malcolm, Joseph
+ * @author mikey, malcolm, Joseph, Malcolm Richardson
  */
 public class ProductDescriptionGUI extends MainFrameGUI{
     
