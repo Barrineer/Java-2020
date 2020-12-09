@@ -8,7 +8,7 @@ import javax.swing.*;
 
 /**
  *
- * @author mikey, Malcolm Richardson
+ * @author mikey, Joseph, Malcolm Richardson
  */
 public class AccountInfoGUI extends MainFrameGUI{
     
