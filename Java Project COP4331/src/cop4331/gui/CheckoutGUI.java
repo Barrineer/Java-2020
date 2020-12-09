@@ -2,10 +2,9 @@ package cop4331.gui;
 import cop4331.model.*;
 import cop4331.controller.CheckoutListener;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 /**
- *
+ * GUI for the user's checkout.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class CheckoutGUI extends MainFrameGUI{
@@ -27,6 +26,7 @@ public class CheckoutGUI extends MainFrameGUI{
     /**
      * Creates the button events for the Checkout GUI
      */
+    @Override
     public void createButtonEvents(){
         
         payButton = new JButton("Pay");
@@ -44,6 +44,7 @@ public class CheckoutGUI extends MainFrameGUI{
     /**
      * Creates the Checkout GUI
      */
+    @Override
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
@@ -111,7 +112,7 @@ public class CheckoutGUI extends MainFrameGUI{
     }
     /**
      * Getter for the receipt
-     * @return receipt
+     * @return receipt Receipt object
      */
     public Receipt getReceipt(){
         receipt.setPaymentType(paymentTypeField.getText());

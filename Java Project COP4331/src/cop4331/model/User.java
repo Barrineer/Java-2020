@@ -1,7 +1,7 @@
 package cop4331.model;
 import java.util.*;
 /**
- * Holds the information for the User and allows get/set methods.
+ * Holds the information for the User and has get/set methods.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class User implements java.io.Serializable{
@@ -20,11 +20,11 @@ public class User implements java.io.Serializable{
     
     /**
      * Constructor for User Class.
-     * @param accountType
-     * @param userName
-     * @param password
-     * @param address
-     * @param age 
+     * @param accountType String of User's account type
+     * @param userName User's username
+     * @param password User's password
+     * @param address User's address
+     * @param age User's age in Date format
      */
     public User(String accountType, String userName, String password, String address, Date age){
         this.accountType = accountType;
@@ -38,9 +38,9 @@ public class User implements java.io.Serializable{
     }
     /**
      * Constructor for User Class.
-     * @param accountType
-     * @param userName
-     * @param password 
+     * @param accountType String of account type
+     * @param userName User's username
+     * @param password User's password
      */
     public User(String accountType, String userName, String password){
         this.accountType = accountType;
@@ -54,7 +54,7 @@ public class User implements java.io.Serializable{
     }
     /**
      * Tests if user is the same as the other user
-     * @param user
+     * @param user other User to compare
      * @return true if this.user == user
      */
     public boolean equals(User user){

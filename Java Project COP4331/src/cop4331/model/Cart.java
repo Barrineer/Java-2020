@@ -11,6 +11,10 @@ public class Cart implements java.io.Serializable{
     private ArrayList<Product> productList;
     private double total;
     
+    /**
+     * Constructor for the Cart object
+     * @param userID int for the user's ID
+     */
     public Cart(int userID){
         this.userID = userID;
         this.productList = new ArrayList<Product>();
@@ -34,7 +38,7 @@ public class Cart implements java.io.Serializable{
     }
     /**
      * Getter for the userID.
-     * @return 
+     * @return int of the user's ID
      */
     public int getUserID(){
         return this.userID;
@@ -51,7 +55,9 @@ public class Cart implements java.io.Serializable{
         productList.add(temp);
         this.total += 1;
     }
-    
+    /**
+     * Empties the user's cart
+     */
     public void emptyCart(){
         productList = new ArrayList<>();
     }

@@ -1,14 +1,11 @@
 package cop4331.gui;
 import cop4331.controller.ProductDescriptionListener;
 import cop4331.model.*;
-import cop4331.controller.ReceiptListener;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 
 /**
- *
+ * GUI for the product description page.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class ProductDescriptionGUI extends MainFrameGUI{
@@ -38,6 +35,7 @@ public class ProductDescriptionGUI extends MainFrameGUI{
     /**
      * Creates button events for the product description GUI
      */
+    @Override
     public void createButtonEvents(){
     
         backButton = new JButton("Back");
@@ -60,6 +58,7 @@ public class ProductDescriptionGUI extends MainFrameGUI{
     /**
      * Creates Product Description GUI
      */
+    @Override
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);
@@ -148,21 +147,21 @@ public class ProductDescriptionGUI extends MainFrameGUI{
     }
     /**
      * Getter for product
-     * @return product
+     * @return Product object
      */
     public Product getProduct(){
         return product;
     }
     /**
      * Getter for product quantity field
-     * @return quantity
+     * @return int for quantity
      */
     public int getQuantity(){
         return Integer.parseInt(quantitySelectionField.getText());
     }
     /**
      * Setter for product quantity selection label
-     * @param text 
+     * @param text String for new quantity selection label text
      */
     public void setQuantityLabel(String text){
         quantitySelectionLabel.setText(text);

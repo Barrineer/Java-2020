@@ -5,7 +5,7 @@ import cop4331.model.User;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
- *
+ * ActionListener for the LoginGUI.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class LoginListener implements ActionListener{
@@ -13,9 +13,10 @@ public class LoginListener implements ActionListener{
     private String accountType = "";
     
     /**
-     * Overrides ActionListener
-     * @param e 
+     * Called when a button is pressed in LoginListenerGUI
+     * @param e ActionEvent object
      */
+    @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
         MainFrameGUI gui = CurrentGUI.getInstance().getFrame();

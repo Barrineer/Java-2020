@@ -2,11 +2,9 @@ package cop4331.gui;
 import cop4331.model.*;
 import cop4331.controller.ReceiptListener;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
 /**
- *
+ * GUI for the receipt.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class ReceiptGUI extends MainFrameGUI{
@@ -20,12 +18,17 @@ public class ReceiptGUI extends MainFrameGUI{
     
     private Receipt receipt;
     
+    /**
+     * Constructor for ReceiptGUI
+     * @param receipt Receipt object
+     */
     public ReceiptGUI(Receipt receipt){
         this.receipt = receipt;
     }
     /**
      * Creates the button events for the Receipt GUI
      */
+    @Override
     public void createButtonEvents(){
     
         returnButton = new JButton("Return");
@@ -39,6 +42,7 @@ public class ReceiptGUI extends MainFrameGUI{
     /**
      * Creates GUI for Receipt GUI
      */
+    @Override
     public void createGUI(){
     
         GridBagConstraints c = new GridBagConstraints();

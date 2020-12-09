@@ -10,11 +10,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
+ * ActionListener for the InventoryGUI.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class InventoryListener implements ActionListener{
 
+    /**
+     * Called when a button is pressed in InventoryGUI
+     * @param e ActionEvent object
+     */
+    @Override
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
         MainFrameGUI frame = CurrentGUI.getInstance().getFrame();

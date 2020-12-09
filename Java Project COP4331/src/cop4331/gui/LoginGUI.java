@@ -1,7 +1,6 @@
 package cop4331.gui;
 import cop4331.controller.LoginListener;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 /**
  * The Login GUI for the BrosRus Application.
@@ -33,6 +32,7 @@ public class LoginGUI extends MainFrameGUI{
     /**
      * Creates a GUI for Login
      */
+    @Override
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("Welcome to BrosRus!",500,500);
@@ -68,6 +68,7 @@ public class LoginGUI extends MainFrameGUI{
     /**
      * Creates button events for the Login GUI
      */
+    @Override
     public void createButtonEvents(){
         newUserButton = new JButton("Sign Up");
         buyerButton = new JButton("Buyer");
@@ -268,28 +269,28 @@ public class LoginGUI extends MainFrameGUI{
     }
     /**
      * Getter for userNameField
-     * @return string of username
+     * @return String of username
      */
     public String getUserName(){
         return this.userNameField.getText();
     }
     /**
      * Getter for passwordField
-     * @return string of password
+     * @return String of password
      */
     public String getPassword(){
         return this.passwordField.getText();
     }
     /**
      * Getter for confirmPasswordField
-     * @return string of confirmed password 
+     * @return String of confirmed password 
      */
     public String getConfirmPassword(){
         return this.confirmPasswordField.getText();
     }
     /**
      * sets text for the Login Label
-     * @param newText 
+     * @param newText String for the new loginLabel text.
      */
     public void setLoginLabel(String newText){
         loginLabel.setText(newText);

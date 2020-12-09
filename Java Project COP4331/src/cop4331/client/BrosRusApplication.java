@@ -1,10 +1,9 @@
 package cop4331.client;
 import java.util.*;
-import cop4331.gui.*;
 import cop4331.controller.*;
 import cop4331.model.*;
 /**
- *
+ * Contains the main function and other functions for testing.
  * @author mikey, Joseph Mucciaccio, Malcolm Richardson
  */
 

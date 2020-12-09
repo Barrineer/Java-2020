@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.*;
 /**
- *
+ * GUI for the user's inventory.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class InventoryGUI extends MainFrameGUI{
@@ -28,6 +28,7 @@ public class InventoryGUI extends MainFrameGUI{
     /**
      * Creates the button events for the seller GUI
      */
+    @Override
     public void createButtonEvents(){
         switchButton = new JButton("Switch to buyer");
         accountButton = new JButton(Login.getInstance().getCurrentUser().getUserName());
@@ -48,6 +49,7 @@ public class InventoryGUI extends MainFrameGUI{
     /**
      * Creates seller GUI
      */
+    @Override
     public void createGUI(){
         setPageCounter();
         setTotalPages();
@@ -107,7 +109,7 @@ public class InventoryGUI extends MainFrameGUI{
     }
     /**
      * Creates a new product button
-     * @param productName 
+     * @param productName String object
      */
     public void createProductButton(String productName){
         productButton = new JButton(productName);
@@ -117,15 +119,15 @@ public class InventoryGUI extends MainFrameGUI{
     }
     /**
      * Adds the product button to the main frame
-     * @param c 
+     * @param c GridBagConstraints object
      */
     public void addProductButton(GridBagConstraints c){
         mainFrame.add(productButton,c);
     }
     /**
      * Getter for products based on item ID
-     * @param productID
-     * @return product
+     * @param productID String object
+     * @return product Product object
      */
     public Product getProduct(String productID){
         Product product = new Product("none","none",0,0,0,0,"none");
@@ -138,7 +140,7 @@ public class InventoryGUI extends MainFrameGUI{
     }
     /**
      * Creates a page button
-     * @param number 
+     * @param number String for page number
      */
     public void createPageButton(String number){
         nextPageButton = new JButton(number);
@@ -148,7 +150,7 @@ public class InventoryGUI extends MainFrameGUI{
     }
     /**
      * Add the page button based on GridBagContraints
-     * @param c 
+     * @param c GridBagConstraints object
      */
     public void addPageButton(GridBagConstraints c){
         mainFrame.add(nextPageButton, c);
@@ -161,7 +163,7 @@ public class InventoryGUI extends MainFrameGUI{
     }
     /**
      * Getter for page number
-     * @return pageCounter
+     * @return pageCounter int for pageCounter
      */
     public int getPageNumber(){
         return pageCounter;
@@ -179,7 +181,7 @@ public class InventoryGUI extends MainFrameGUI{
     }
     /**
      * Setter for item amount
-     * @param number 
+     * @param number int for itemAmount
      */
     public void setItemAmount(int number){
         itemAmount = number;

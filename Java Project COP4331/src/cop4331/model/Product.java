@@ -20,6 +20,13 @@ public class Product implements java.io.Serializable{
     /**
      * Constructor for a new Product.
      * Gives a unique itemID.
+     * @param name product name
+     * @param description product description
+     * @param price product price
+     * @param originalPrice product original price
+     * @param quantity product quantity
+     * @param sellerID product seller ID
+     * @param address product address
      */
     public Product(String name, String description, double price,double originalPrice, int quantity, int sellerID, String address){
         
@@ -31,8 +38,6 @@ public class Product implements java.io.Serializable{
         this.quantity = quantity;
         this.sellerID = sellerID;
         this.address = address;
-        
-        
     }
     /**
      * Private constructor for a new Product.
@@ -67,8 +72,8 @@ public class Product implements java.io.Serializable{
     }
     /**
      * Tests if the product is equal based on the itemID.
-     * @param product
-     * @return 
+     * @param product other Product to compare
+     * @return true if equal, false otherwise
      */
     public boolean equals(Product product){
         if(this.itemID == product.itemID)

@@ -3,7 +3,7 @@ import cop4331.controller.NewProductListener;
 import java.awt.*;
 import javax.swing.*;
 /**
- *
+ * GUI for the new product creation page.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class NewProductGUI extends MainFrameGUI{
@@ -30,6 +30,7 @@ public class NewProductGUI extends MainFrameGUI{
     /**
      * Creates button events for New Product GUI
      */
+    @Override
     public void createButtonEvents(){
         
         addButton = new JButton("Add");
@@ -48,6 +49,7 @@ public class NewProductGUI extends MainFrameGUI{
     /**
      * Creates New Product GUI
      */
+    @Override
     public void createGUI(){
         createNewFrame("BrosRus Application",1000,1000);
         GridBagConstraints c = new GridBagConstraints();
@@ -183,49 +185,49 @@ public class NewProductGUI extends MainFrameGUI{
     }            
     /**
      * Getter for product name field 
-     * @return string for name text field
+     * @return String for name text field
      */
     public String getName(){
         return nameField.getText();
     }
     /**
      * Getter for product description field
-     * @return string for description field
+     * @return String for description field
      */
     public String getDescription(){
         return descriptionField.getText();
     }
     /**
      * Getter for the Original Price Field
-     * @return 
+     * @return String for original price field
      */
     public String getOriginalPrice(){
         return originalPriceField.getText();
     }
     /**
      * Getter for product price field
-     * @return string for price field
+     * @return String for price field
      */
     public String getPrice(){
         return priceField.getText();
     }
     /**
      * Getter for product quantity field
-     * @return string for quantity field
+     * @return String for quantity field
      */
     public String getQuantity(){
         return quantityField.getText();
     }
     /**
      * Getter for product address field
-     * @return string for address field
+     * @return String for address field
      */
     public String getAddress(){
         return addressField.getText();
     }
     /**
      * Setter for detail label
-     * @param text string to set
+     * @param text String to set detail label text to
      */
     public void setDetailLabel(String text){
         detailLabel.setText(text);

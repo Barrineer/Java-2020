@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 /**
- *
+ * Superclass for all the GUIs.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class MainFrameGUI {
@@ -35,11 +35,7 @@ public class MainFrameGUI {
     
     protected final int REMAINDER = GridBagConstraints.REMAINDER;
     protected final int BOTH = GridBagConstraints.BOTH;
-    /*
-    SERIF = TimesRoman
-    SANS_SERIF = Helvetica
-    MONOSPACED = Courier
-    */
+
     protected final Font font = new Font(Font.SANS_SERIF,Font.PLAIN,14);
     protected final Font fontBold = new Font(Font.SANS_SERIF,Font.BOLD,14);
     protected final Font fontItalic = new Font(Font.SANS_SERIF,Font.ITALIC,14);

@@ -12,12 +12,16 @@ public class CurrentGUI {
     
     private CurrentGUI(){}
     
+    /**
+     * Gets the instance for CurrentGUI.
+     * @return CurrentGUI object
+     */
     public static CurrentGUI getInstance(){
         return currentGUI;
     }
     /**
      * Gets the current Frame.
-     * @return 
+     * @return MainFrameGUI object
      */
     public MainFrameGUI getFrame(){
         return currentFrame;

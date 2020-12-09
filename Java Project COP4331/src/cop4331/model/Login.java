@@ -32,21 +32,21 @@ public class Login {
     }
     /**
      * returns an ArrayList of users.
-     * @return users
+     * @return users ArrayList of the Users
      */
     public ArrayList<User> getUsers(){
         return users;
     }
     /**
      * Setter for the current user.
-     * @param user 
+     * @param user User object to set
      */
     public void setCurrentUser(User user){
         currentUser = user;
     }
     /**
      * Getter for the current user.
-     * @return currentUser
+     * @return currentUser 
      */
     public User getCurrentUser(){
         return currentUser;
@@ -105,7 +105,6 @@ public class Login {
      * Checks if the User's credentials is equivalent to the information given.
      * @param user The User trying to login.
      * @return Returns true if the credentials match, false otherwise.
-     * @Precondition Can only be called if the users ArrayList has at least 1 User object.
      */
     public boolean verify(User user){
         boolean verify = false;

@@ -2,11 +2,10 @@ package cop4331.gui;
 import cop4331.model.*;
 import cop4331.controller.ShoppingListener;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.*;
 /**
- *
+ * GUI for the shopping page.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class ShoppingGUI extends MainFrameGUI{
@@ -26,6 +25,7 @@ public class ShoppingGUI extends MainFrameGUI{
     /**
      * Creates the button events for Buyer GUI
      */
+    @Override
     public void createButtonEvents(){
         switchButton = new JButton("Switch to seller");
         accountButton = new JButton(Login.getInstance().getCurrentUser().getUserName());
@@ -46,6 +46,7 @@ public class ShoppingGUI extends MainFrameGUI{
     /**
      * Creates Buyer GUI
      */
+    @Override
     public void createGUI(){
         setPageCounter();
         setTotalPages();
@@ -110,8 +111,8 @@ public class ShoppingGUI extends MainFrameGUI{
         
     }
     /**
-     * 
-     * @param productName 
+     * Creates a new product button instance
+     * @param productName String for the product name + productID
      */
     public void createProductButton(String productName){
         productButton = new JButton(productName);
@@ -119,11 +120,18 @@ public class ShoppingGUI extends MainFrameGUI{
         productButton.addActionListener(new ShoppingListener());
         productButton.setFont(font);
     }
-    
+    /**
+     * Adds the product button to the mainFrame
+     * @param c GridBagConstraints object
+     */
     public void addProductButton(GridBagConstraints c){
         mainFrame.add(productButton,c);
     }
-    
+    /**
+     * Getter for the Product object
+     * @param productID String of the product's ID.
+     * @return Product object
+     */
     public Product getProduct(String productID){
         Product product = new Product("none","none",0,0,0,0,"none");
         for(int i = 0;i < products.size();i++){
@@ -133,14 +141,20 @@ public class ShoppingGUI extends MainFrameGUI{
         }
         return product;
     }
-    
+    /**
+     * Creates a new instance of the next page button
+     * @param number String for the page number
+     */
     public void createPageButton(String number){
         nextPageButton = new JButton(number);
         nextPageButton.setActionCommand(number);
         nextPageButton.addActionListener(new ShoppingListener());
         nextPageButton.setFont(font);
     }
-    
+    /**
+     * Adds a next page button to the mainFrame
+     * @param c GridBagConstraints object
+     */
     public void addPageButton(GridBagConstraints c){
         mainFrame.add(nextPageButton,c);
     }
@@ -152,7 +166,7 @@ public class ShoppingGUI extends MainFrameGUI{
     }
     /**
      * Getter for the page number
-     * @return pageCounter
+     * @return pageCounter int
      */
     public int getPageNumber(){
         return pageCounter;
@@ -171,14 +185,14 @@ public class ShoppingGUI extends MainFrameGUI{
     }
     /**
      * Setter for the item amount
-     * @param number 
+     * @param number int for the new itemAmount
      */
     public void setItemAmount(int number){
         itemAmount = number;
     }
     /**
      * Gets all products from every users inventory
-     * @return allProducts
+     * @return allProducts ArrayList
      */
     private ArrayList<Product> getAllProducts(){
         ArrayList<User> users = Login.getInstance().getUsers();

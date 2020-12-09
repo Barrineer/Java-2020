@@ -10,11 +10,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 /**
- *
+ * ActionListener for the CheckoutGUI.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class CheckoutListener implements ActionListener{
 
+    /**
+     * Called when a button is pressed in CheckoutGUI
+     * @param e ActionEvent object
+     */
+    @Override
     public void actionPerformed(ActionEvent e) {
         
         String command = e.getActionCommand();

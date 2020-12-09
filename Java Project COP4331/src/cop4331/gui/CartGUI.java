@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 /**
- *
+ * GUI for the user's cart.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class CartGUI extends MainFrameGUI{
@@ -32,6 +32,7 @@ public class CartGUI extends MainFrameGUI{
     /**
      * Creates button events for the Cart GUI
      */
+    @Override
     public void createButtonEvents(){
         backButton = new JButton("Back");
         checkoutButton = new JButton("Checkout");
@@ -48,6 +49,7 @@ public class CartGUI extends MainFrameGUI{
     /**
      * Creates the Cart GUI
      */
+    @Override
     public void createGUI(){
         setPageCounter();
         setTotalPages();
@@ -123,7 +125,7 @@ public class CartGUI extends MainFrameGUI{
     }
     /**
      * Creates a product button
-     * @param productName 
+     * @param productName String for product name
      */
     public void createProductButton(String productName){
         productButton = new JButton(productName);
@@ -133,15 +135,15 @@ public class CartGUI extends MainFrameGUI{
     }
     /**
      * Adds product button to the main frame
-     * @param c 
+     * @param c GridBagConstraints object
      */
     public void addProductButton(GridBagConstraints c){
         mainFrame.add(productButton,c);
     }
     /**
      * Getter for products
-     * @param productID
-     * @return product
+     * @param productID String for productID
+     * @return product Product object
      */
     public Product getProduct(String productID){
         Product product = new Product("none","none",0,0,0,0,"none");
@@ -154,7 +156,7 @@ public class CartGUI extends MainFrameGUI{
     }
     /**
      * Creates the "Remove 1" and "Remove All" button
-     * @param productID 
+     * @param productID String for productID
      */
     public void createRemoveButtons(String productID){
         removeOneButton = new JButton("Remove 1");
@@ -171,21 +173,21 @@ public class CartGUI extends MainFrameGUI{
     }
     /**
      * Add "Remove All" button
-     * @param c 
+     * @param c GridBagConstraints
      */
     public void addRemoveAllButton(GridBagConstraints c){
         mainFrame.add(removeAllButton,c);
     }
     /**
      * Add "Remove 1" button
-     * @param c 
+     * @param c GridBagConstraints
      */
     public void addRemoveOneButton(GridBagConstraints c){
         mainFrame.add(removeOneButton,c);
     }
     /**
      * Creates the page buttons
-     * @param number 
+     * @param number String for page number
      */
     public void createPageButton(String number){
         nextPageButton = new JButton(number);
@@ -195,7 +197,7 @@ public class CartGUI extends MainFrameGUI{
     }
     /**
      * Adds the page buttons
-     * @param c 
+     * @param c GridBagConstraints object
      */
     public void addPageButton(GridBagConstraints c){
         mainFrame.add(nextPageButton,c);
@@ -226,7 +228,7 @@ public class CartGUI extends MainFrameGUI{
     }
     /**
      * Sets the total item amount
-     * @param number 
+     * @param number int for new itemAmount
      */
     public void setItemAmount(int number){
         itemAmount = number;

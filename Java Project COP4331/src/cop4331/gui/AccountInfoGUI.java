@@ -7,7 +7,7 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- *
+ * GUI for showing the user's account information.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class AccountInfoGUI extends MainFrameGUI{
@@ -33,6 +33,7 @@ public class AccountInfoGUI extends MainFrameGUI{
     /**
      * Creates button events for Account Info GUI
      */
+    @Override
     public void createButtonEvents(){
         
         backButton = new JButton("Back");
@@ -47,6 +48,7 @@ public class AccountInfoGUI extends MainFrameGUI{
     /**
      * Creates Account Info GUI
      */
+    @Override
     public void createGUI(){
         GridBagConstraints c = new GridBagConstraints();
         createNewFrame("BrosRus Application",1000,1000);

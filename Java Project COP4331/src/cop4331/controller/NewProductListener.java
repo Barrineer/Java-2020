@@ -8,11 +8,16 @@ import cop4331.model.User;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
- *
+ * ActionListener for the NewProductGUI.
  * @author mikey, Joseph, Malcolm Richardson
  */
 public class NewProductListener implements ActionListener{
 
+    /**
+     * Called when a button is pressed in NewProductGUI
+     * @param e ActionEvent object
+     */
+    @Override
     public void actionPerformed(ActionEvent e) {
         
         String command = e.getActionCommand();

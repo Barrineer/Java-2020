@@ -13,9 +13,9 @@ public class Receipt {
     
     /**
      * Constructor for the Receipt Class
-     * @param productList
-     * @param checkoutID
-     * @param paymentType 
+     * @param productList Cart object
+     * @param checkoutID int for checkout ID
+     * @param paymentType String for payment type
      */
     public Receipt(Cart productList, int checkoutID, String paymentType){
         this.productList = (Cart) productList.clone();
@@ -35,7 +35,7 @@ public class Receipt {
     }
     /**
      * Setter for paymentType.
-     * @param paymentType 
+     * @param paymentType String of payment type
      */
     public void setPaymentType(String paymentType){
         this.paymentType = paymentType;
